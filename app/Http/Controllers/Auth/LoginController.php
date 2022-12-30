@@ -51,4 +51,18 @@ class LoginController extends Controller
         }
         return view("auth.login");
     }
+
+    public function logout(Request $request){
+        Auth::logout();
+        if($request->isMethod('post')){
+
+            $data=$request->only('mail','password');
+            // ログインが成功したら、トップページへ
+            //↓ログイン条件は公開時には消すこと
+            if(Auth::attempt($data)){
+                return redirect('/top');
+            }
+        }
+        return view("auth.login");
+    }
 }
