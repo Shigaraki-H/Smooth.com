@@ -14,4 +14,18 @@ class UsersController extends Controller
         $userLists = \DB::table('users')->get();
         return view('users.search',['userLists' => $userLists]);
     }
+
+    public function searchResult(Request $request){
+
+        $keyword = $request->input("inputkeyword");
+        if($request->has("inputkeyword") && $keyword != ""){
+            $userLists = \DB::table('users')->where('username', 'like',"%".$keyword."%")->get();
+            
+        }else{
+            $userLists = \DB::table('users')->get();
+        }
+
+
+        return view('users.search',['userLists' => $userLists]);
+    }
 }
