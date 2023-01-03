@@ -5,11 +5,11 @@
 <div class="confirmForm">
     <a class = "username">
     <p>username</p>
-{{Form::text('inputName', null, ['class' => 'form-control', 'id' => 'inputName', 'placeholder' => 'username'])}}
+{{Form::text('inputName', null, ['class' => 'form-control', 'id' => 'inputName', 'placeholder' => Auth::user()->username])}}
 </a>
 <a class = "mailaddress">
     <p>mail address</p>
-{{Form::email('inputEmail', null, ['class' => 'form-control','id' => 'inputEmail','placeholder' => 'e-mail'])}}
+{{Form::email('inputEmail', null, ['class' => 'form-control','id' => 'inputEmail','placeholder' => Auth::user()->mail])}}
 </a>
 <a class = "password">
     <p>password</p>

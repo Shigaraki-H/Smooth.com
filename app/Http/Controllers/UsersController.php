@@ -28,4 +28,17 @@ class UsersController extends Controller
 
         return view('users.search',['userLists' => $userLists]);
     }
+
+    public function updateProfile(Request $request){
+        $id = Auth::user()->id;
+        $reUsername = $request->input('username');
+        $reMail = $request->input('mailaddress');
+        $repassword = $request->input('password');
+        $reBio = $request->input('bio');
+        $reIcon = $request->input('iconimage');
+
+        User::where('id',$id)->update('',$null);
+
+
+    }
 }
