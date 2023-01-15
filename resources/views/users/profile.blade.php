@@ -2,6 +2,8 @@
 
 @section('content')
 
+{{Form::open(['url' => '/profile-update', 'files' => true])}}
+
 <div class="confirmForm">
     <a class = "username">
     <p>username</p>
@@ -17,11 +19,11 @@
 </a>
     <a class = "passwordcomfirm">
         <p>password comfirm</p>
-        {{Form::password('inputPassword', ['class' => 'form-control','id' => 'inputPassword','placeholder' => 'パスワード確認'])}}
+        {{Form::password('inputPassConf', ['class' => 'form-control','id' => 'inputPassword','placeholder' => 'パスワード確認'])}}
     </a>
     <a class = "bio">
     <p>bio</p>
-    {{Form::text('inputName', null, ['class' => 'form-control', 'id' => 'inputName', 'placeholder' => '自己紹介文'])}}
+    {{Form::text('inputBio', null, ['class' => 'form-control', 'id' => 'inputName', 'placeholder' => '自己紹介文'])}}
 </a>
 <a class = "iconimage">
     <p>icon image</p>
@@ -30,5 +32,7 @@
 
 {{Form::submit('更新', ['class'=>'btn btn-primary btn-block'])}}
 </div>
+
+{{Form::close()}}
 
 @endsection

@@ -41,6 +41,8 @@ Route::get('/post/{id}', 'PostsController@delete')->name('delete');
 
 Route::get('/profile','UsersController@profile');
 
+Route::post('/profile-update','UsersController@updateProfile');
+
 Route::get('/search','UsersController@search');
 
 Route::post('/resultword','UsersController@searchResult');

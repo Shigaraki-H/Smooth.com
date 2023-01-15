@@ -3,7 +3,7 @@
 @section('content')
 {{Form::open(['url' => '/post', 'files' => true])}}
 <div class ="mypost">
-<a><img src="images/icon1.png"></a>
+<a><img src="{{ asset('/images/'.Auth::user()->image) }}"></a>
 {{Form::textarea('postcomment', null, ['class' => 'form-control', 'id' => 'textareaRemarks', 'placeholder' => '投稿内容を登録してください', 'rows' => '3'])}}
 {{Form::submit('投稿', ['class'=>'btn btn-primary btn-block'])}}
 </div>
