@@ -4,15 +4,17 @@ namespace App\Http\Controllers;
 
 use Auth;
 use Illuminate\Http\Request;
+use App\Users;
+use App\Posts;
+use App\Follows;
 
 class PostsController extends Controller
 {
     //
     public function index(){
-        $postLists = \DB::table('posts')->get();
-        $userLists = \DB::table('users')->get();
-        $userid = \DB::table('users')->get('id');
-        return view('posts.index',['postLists' => $postLists,'userLists' => $userLists,'userid'=>$userid]);
+        $postLists = Posts::get();
+        $userLists = Users::get(); 
+        return view('posts.index',['postLists' => $postLists,'userLists' => $userLists]);
     }
 
     public function post(Request $request){

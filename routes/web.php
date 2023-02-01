@@ -49,3 +49,11 @@ Route::post('/resultword','UsersController@searchResult');
 
 Route::get('/follow-list','PostsController@index');
 Route::get('/follower-list','PostsController@index');
+
+//フォローする
+Route::post('/follow/{id}','FollowsController@follow')->name('follow');
+//フォローするend
+
+//フォローを外す
+Route::post('/unfollow/{id}','FollowsController@unfollow')->name('unfollow');
+//フォローを外すend

@@ -21,26 +21,26 @@
         <p><a class="btn btn-danger" href="{{Route('delete',$postLists->id)}}" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"><img src="images/trash-h.png"></a></p>
     </div>
     <p><input type="hidden" class="text-edit" value = "" name = "edit_id"></p>
+    <div class="modal js-modal">
+        <form action="/edit/{{$postLists->id}}" method="post" >
+            <div class="modal__bg js-modal-close">
+    
+            </div>
+            <div class="modal__content">
+                <div class = "edit-container">
+                    <textarea name="text_edit"></textarea>
+                </div>
+                <div class = "button_area">
+                    <p><a class="js-modal-close" href="">閉じる</a></p>
+                    <p><input type="submit" value = "更新" class ="btn-success"></p>
+                </div>
+                <p><input type="hidden" class="text-edit" value = "" name = "edit_id"></p>
+            </div><!--modal__inner-->
+        {{csrf_field()}}
+        </form>
+    </div>
     @endforeach
     
-</div>
-<div class="modal js-modal">
-    <form action="/edit/{{$postLists->id}}" method="post" >
-        <div class="modal__bg js-modal-close">
-
-        </div>
-        <div class="modal__content">
-            <div class = "edit-container">
-                <textarea name="text_edit"></textarea>
-            </div>
-            <div class = "button_area">
-                <p><a class="js-modal-close" href="">閉じる</a></p>
-                <p><input type="submit" value = "更新" class ="btn-success"></p>
-            </div>
-            <p><input type="hidden" class="text-edit" value = "" name = "edit_id"></p>
-        </div><!--modal__inner-->
-    {{csrf_field()}}
-    </form>
 </div>
 {{Form::close()}}
 

@@ -11,14 +11,27 @@
 
 
 
+<h4>ユーザー一覧</h4>
+@foreach($userLists as $userLists)
 <div class = "userlists">
-    <h4>ユーザー一覧</h4>
-    @foreach($userLists as $userLists)
     <p>{{$userLists->images}}</p>
     <p>{{$userLists->username}}</p>
-    @endforeach
-
 </div>
+    <div class = "follow_btn">
+            @if(Auth::user()->isFollowing($userLists->id))
+                <form action="{{ route('unfollow', ['id' => $userLists->id]) }}" method="POST">
+                    {{ csrf_field() }}
 
+                    <button type="submit" class="btn btn-danger">フォロー解除</button>
+                </form>
+            @else
+                <form action="{{ route('follow', ['id' => $userLists->id]) }}" method="POST">
+                    {{ csrf_field() }}
+
+                    <button type="submit" class="btn btn-primary">フォローする</button>
+                </form>
+            @endif
+    </div>
+@endforeach
 
 @endsection

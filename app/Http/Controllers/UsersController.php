@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\Users;
+use App\Posts;
+use App\Follows;
 
 class UsersController extends Controller
 {
@@ -11,8 +14,13 @@ class UsersController extends Controller
     public function profile(){
         return view('users.profile');
     }
-    public function search(){
-        $userLists = \DB::table('users')->get();
+    public function search(Follows $follower){
+
+        $auth_name = Auth::user()->username;
+
+        $userLists = \DB::table('users')
+            ->where('username', "!=",$auth_name)->get();
+
         return view('users.search',['userLists' => $userLists]);
     }
 
