@@ -1,7 +1,9 @@
 @charset "utf-8";
-html{
+html{height: 100%;
 }
 body{
+    height: 100%;
+    background: white;
 }
 /* header */
 header{
@@ -12,13 +14,20 @@ header{
 #row{
     display: flex;
     flex-flow: row wrap;
+    border: solid 2px #000;
 }
 #container{
     flex: 0 0 80%;
+    border: solid 2px rgb(216, 33, 33);
 }
 #side-bar{
     flex: 0 0 19%;
     border-left: 1px solid #727272;
+}
+
+.post_container{
+    width: 100%;
+    border-bottom: 3px solid silver;
 }
 
 .modal{
@@ -44,3 +53,94 @@ header{
     width: 60%;
     height: 300px;
 }
+
+.form-control{
+    width: 80%;
+}
+
+.post_container{
+    display: flex;
+}
+
+.mypost{
+    border: solid 2px rgb(253, 0, 148);
+    display: flex;
+    width: 1100px;
+}
+
+.form-control textarea{
+    width: 100%;
+    height: 150px;
+    resize: none;
+    border: none;
+    display: flex;
+}
+
+.post_images{
+    display: flex;
+}
+
+.post_images img{
+    border-radius: 50px;
+    align-items: flex-end;
+}
+
+.post_input textarea{
+    width: 850px;
+    height: 150px;
+    resize: none;
+    border: none;
+}
+
+.post_btn{
+    width: 10%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.btn-area{
+    background: #fff;
+    margin: 10px;
+    height: 80px;
+    width: 1250px;
+    border: solid 2px rgb(0, 167, 69);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-primary{
+    background: rgb(134, 134, 134);
+    align-items: flex-end;
+    content: '';
+    height: 75px;
+    width: 75px;
+    margin: 0 0 0 auto;
+    background-position: 40% 57%;
+    background-size: 200%;
+    background-image: url("../images/post.png");
+}
+
+.btn-success{
+    background: rgb(0, 127, 136);
+    display: flex;
+    margin: 10px;
+    content: '';
+    height: 60px;
+    width: 60px;
+    background-position: 50% 10%;
+    background-size: cover;
+    background-image: url("../images/edit.png") ;
+}
+
+.btn-danger{
+    background: rgb(134, 134, 134);
+    display: flex;
+    margin: 10px;
+    content: '';
+    height: 60px;
+    width: 60px;
+    background-position: 50% 10%;
+    background-size: cover;
+    background-image: url("../images/trash-h.png") ;
+}
+

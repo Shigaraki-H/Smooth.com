@@ -1,11 +1,20 @@
 @extends('layouts.login')
 
 @section('content')
+
+<div class="post_container">
 {{Form::open(['url' => '/post', 'files' => true])}}
-<div class ="mypost">
-<a><img src="{{ asset('/images/'.Auth::user()->image) }}"></a>
-{{Form::textarea('postcomment', null, ['class' => 'form-control', 'id' => 'textareaRemarks', 'placeholder' => '投稿内容を登録してください', 'rows' => '3'])}}
-{{Form::submit('投稿', ['class'=>'btn btn-primary btn-block'])}}
+    <div class ="mypost">
+        <div class="post_images">
+            <a><img src="{{ asset('../images/'.Auth::user()->images) }}" width="90px" height="90px"></a>
+            <div class="post_input">
+            {{Form::textarea('postcomment', null, ['class' => 'form-control', 'id' => 'textareaRemarks', 'placeholder' => '投稿内容を登録してください', 'rows' => '3'])}}
+            </div>
+        </div>
+        <div class="post_btn">
+        {{Form::submit('', ['class'=>'btn btn-primary btn-block'])}}
+        </div>
+    </div>
 </div>
 {{Form::close()}}
 
@@ -17,8 +26,8 @@
     <p>{{$postLists->post}}</p>
     <p>{{$postLists->created_at}}</p>
     <div class = "btn-area">
-        <p><a class="btn btn-success pull-right js-modal-open" href="" data-target = "{{$postLists->id}}"><img src="images/edit.png"></a></p>
-        <p><a class="btn btn-danger" href="{{Route('delete',$postLists->id)}}" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"><img src="images/trash-h.png"></a></p>
+        <p><a class="btn btn-success pull-right js-modal-open" href="" data-target = "{{$postLists->id}}"></a></p>
+        <p><a class="btn btn-danger" href="{{Route('delete',$postLists->id)}}" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"></a></p>
     </div>
     <p><input type="hidden" class="text-edit" value = "" name = "edit_id"></p>
     <div class="modal js-modal">

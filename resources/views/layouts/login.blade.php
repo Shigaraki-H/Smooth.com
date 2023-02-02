@@ -25,7 +25,9 @@
         <h1><a href="/top"><img src="images/atlas.png"></a></h1>
             <div id="">
                 <div id="">
-                    <p>{{Auth::user()->username}}さん<img src="images/arrow.png"></p>
+                    <div class="post_images">
+                        <p>{{Auth::user()->username}}さん<a><img src="{{ asset('../images/'.Auth::user()->images) }}" width="90px" height="90px"></a></p>
+                    </div>
                 <div>
                 <ul>
                     <li><a href="/top">ホーム</a></li>
