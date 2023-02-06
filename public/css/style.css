@@ -19,6 +19,8 @@ header{
 #container{
     flex: 0 0 80%;
     border: solid 2px rgb(216, 33, 33);
+    text-align: center;
+    width: 80%;
 }
 #side-bar{
     flex: 0 0 19%;
@@ -65,7 +67,7 @@ header{
 .mypost{
     border: solid 2px rgb(253, 0, 148);
     display: flex;
-    width: 1100px;
+    width: auto;
 }
 
 .form-control textarea{
@@ -102,7 +104,7 @@ header{
     background: #fff;
     margin: 10px;
     height: 80px;
-    width: 1250px;
+    width: auto;
     border: solid 2px rgb(0, 167, 69);
     display: flex;
     justify-content: flex-end;
@@ -144,3 +146,14 @@ header{
     background-image: url("../images/trash-h.png") ;
 }
 
+.btn-search{
+    background: rgb(134, 134, 134);
+    display: flex;
+    margin: 10px;
+    content: '';
+    height: 60px;
+    width: 60px;
+    background-position: 50% 10%;
+    background-size: cover;
+    background-image: url("../images/search.png") ;
+}

@@ -11,9 +11,9 @@
             {{Form::textarea('postcomment', null, ['class' => 'form-control', 'id' => 'textareaRemarks', 'placeholder' => '投稿内容を登録してください', 'rows' => '3'])}}
             </div>
         </div>
-        <div class="post_btn">
-        {{Form::submit('', ['class'=>'btn btn-primary btn-block'])}}
-        </div>
+    </div>
+    <div class="post_btn">
+    {{Form::submit('', ['class'=>'btn btn-primary btn-block'])}}
     </div>
 </div>
 {{Form::close()}}

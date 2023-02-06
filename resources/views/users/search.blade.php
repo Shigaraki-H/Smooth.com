@@ -5,7 +5,7 @@
 {!! Form::open(['url' => '/resultword']) !!}
 <div class ="search">
 {{Form::textarea('textareaRemarks', null, ['class' => 'form-control', 'name' => 'inputkeyword', 'placeholder' => 'ユーザー名', 'rows' => '3'])}}
-{{Form::submit('検索', ['class'=>'btn btn-primary btn-block'])}}
+{{Form::submit('', ['class'=>'btn btn-search btn-block'])}}
 </div>
 {!! Form::close() !!}
 
@@ -22,13 +22,13 @@
                 <form action="{{ route('unfollow', ['id' => $userLists->id]) }}" method="POST">
                     {{ csrf_field() }}
 
-                    <button type="submit" class="btn btn-danger">フォロー解除</button>
+                    <button type="submit" class="btn btn-unfollow">フォロー解除</button>
                 </form>
             @else
                 <form action="{{ route('follow', ['id' => $userLists->id]) }}" method="POST">
                     {{ csrf_field() }}
 
-                    <button type="submit" class="btn btn-primary">フォローする</button>
+                    <button type="submit" class="btn btn-follow">フォローする</button>
                 </form>
             @endif
     </div>

@@ -30,7 +30,7 @@
     {{Form::file('image', ['class'=>'custom-file-input','id'=>'fileImage'])}}
 </a>
 
-{{Form::submit('更新', ['class'=>'btn btn-primary btn-block'])}}
+{{Form::submit('更新', ['class'=>'btn btn-update btn-block'])}}
 </div>
 
 {{Form::close()}}
