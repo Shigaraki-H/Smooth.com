@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
-use App\Http\Requests\ValidationCheckRequest;
+use App\Http\Requests\ValidationCheckRegister;
 
 class RegisterController extends Controller
 {
@@ -76,7 +76,7 @@ class RegisterController extends Controller
         return view("auth.register");
     }
 
-    public function register(ValidationCheckRequest $request){
+    public function register(ValidationCheckRegister $request){
         if($request->isMethod('post')){
             $data = $request->input();
 

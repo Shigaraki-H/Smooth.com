@@ -8,3 +8,32 @@ body{
     height: 100%;
     background: #186AC9;
 }
+
+.register_area{
+    height: 100%;
+}
+
+.register_form{
+    width: 30%;
+    height: 450px;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    text-align: center;
+    padding: 50px 0;
+    color: white;
+}
+
+.register-box{
+    display: inline;
+}
+
+.alert{
+    color: red;
+}
+
+h1{
+    font-weight: bold;
+    font-size: large;
+    color: burlywood;
+}

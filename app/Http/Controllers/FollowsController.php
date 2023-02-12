@@ -12,10 +12,15 @@ class FollowsController extends Controller
 {
     //
     public function followList(){
-        return view('follows.followList');
+        $postLists = Posts::get();
+        $userLists = Users::get();
+        return view('follows.followList',['postLists'=>$postLists],['userLists'=>$userLists]);
     }
+    
     public function followerList(){
-        return view('follows.followerList');
+        $postLists = Posts::get();
+        $userLists = Users::get();
+        return view('follows.followerList',['postLists'=>$postLists],['userLists'=>$userLists]);
     }
 
     // フォロー

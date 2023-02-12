@@ -20,7 +20,7 @@
 
 
 //ログアウト中のページ
-Route::get('/login', 'Auth\LoginController@login');
+Route::get('/login', 'Auth\LoginController@loginView');
 Route::post('/login', 'Auth\LoginController@login');
 
 Route::get('/logout', 'Auth\LoginController@logout');
@@ -57,3 +57,8 @@ Route::post('/follow/{id}','FollowsController@follow')->name('follow');
 //フォローを外す
 Route::post('/unfollow/{id}','FollowsController@unfollow')->name('unfollow');
 //フォローを外すend
+
+
+Route::get('/followList','FollowsController@followList');
+
+Route::get('/followerList','FollowsController@followerList');

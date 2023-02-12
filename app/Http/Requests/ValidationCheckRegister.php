@@ -12,7 +12,7 @@ use Request as PostRequest;
 use App\Http\Controllers\Auth;
 
 
-class ValidationCheckRequest extends FormRequest
+class ValidationCheckRegister extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

@@ -16,21 +16,33 @@
 
 {!! Form::open(['url' => '/register/post', 'files' => true]) !!}
 
-<h2>新規ユーザー登録</h2>
+<h1>新規ユーザー登録</h1>
 
+<div class = "register-box">
+
+<p>
 {{ Form::label('ユーザー名') }}
 {{ Form::text('username',null,['class' => 'input']) }}
+</p>
 
+<p>
 {{ Form::label('メールアドレス') }}
 {{ Form::text('mail',null,['class' => 'input']) }}
+</p>
 
+<p>
 {{ Form::label('パスワード') }}
 {{ Form::text('password',null,['class' => 'input']) }}
+</p>
 
+<p>
 {{ Form::label('パスワード確認') }}
 {{ Form::text('password-confirm',null,['class' => 'input']) }}
+</p>
 
 {{ Form::submit('登録') }}
+
+</div>
 
 <p><a href="/login">ログイン画面へ戻る</a></p>
 
