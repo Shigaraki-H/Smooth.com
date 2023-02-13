@@ -35,7 +35,7 @@ Route::post('/added', 'Auth\RegisterController@added');
 //ログイン中のページ
 Route::get('/top','PostsController@index');
 
-Route::post('/post','PostsController@post');
+Route::post('/top','PostsController@post')->name('top');;
 
 Route::get('/post/{id}', 'PostsController@delete')->name('delete');
 

@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="post_container">
-{{Form::open(['url' => '/post', 'files' => true])}}
+{{Form::open(['url' => '/top', 'files' => true])}}
     <div class ="mypost">
         <div class="post_images">
             <a><img src="{{ asset('../images/'.Auth::user()->images) }}" width="90px" height="90px"></a>

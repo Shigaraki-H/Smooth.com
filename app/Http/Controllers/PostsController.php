@@ -23,6 +23,7 @@ class PostsController extends Controller
         
         $userLists = \DB::table('users')->get();
         $userid = \DB::table('users')->get('id');
+        $postLists = \DB::table('posts')->get();
         
         $postcomment = $request->input("postcomment");
         if($postcomment != ""){
@@ -34,10 +35,10 @@ class PostsController extends Controller
         }else{
 
         }
-        
-        $postLists = \DB::table('posts')->get();
-        return view('posts.index',['postLists' => $postLists,'userLists' => $userLists,'userid'=>$userid]);
+
+        return redirect()->route('top')->with(['postLists' => $postLists,'userLists' => $userLists,'userid'=>$userid]);
     }
+
 
     public function delete($id)
     {
