@@ -62,6 +62,7 @@ header{
 
 .post_container{
     display: flex;
+    flex-wrap: nowrap;
 }
 
 .mypost{
@@ -156,4 +157,16 @@ header{
     background-position: 50% 10%;
     background-size: cover;
     background-image: url("../images/search.png") ;
+}
+
+.page_title{
+    font-weight: bold;
+    font-size: 40px;
+    color: black;
+    display: flex;
+}
+
+.follows_list_images{
+    display: flex;
+    padding : 10px;
 }
