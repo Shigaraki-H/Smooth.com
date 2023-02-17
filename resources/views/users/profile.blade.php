@@ -35,7 +35,7 @@
     </a>
     <a class = "bio">
     <p>bio</p>
-    {{Form::text('inputBio', null, ['class' => 'form-control', 'id' => 'inputName', 'placeholder' => '自己紹介文'])}}
+    {{Form::text('inputBio', null, ['class' => 'form-control', 'id' => 'inputName', 'placeholder' => Auth::user()->bio])}}
 </a>
 <a class = "iconimage">
     <p>icon image</p>

@@ -3,20 +3,20 @@
 @section('content')
 
 <div class="post_container">
-{{Form::open(['url' => '/top', 'files' => true])}}
     <div class ="mypost">
         <div class="post_images">
             <a><img src="{{ asset('../images/'.Auth::user()->images) }}" width="90px" height="90px"></a>
+            {{Form::open(['url' => '/top', 'files' => true])}}
             <div class="post_input">
-            {{Form::textarea('postcomment', null, ['class' => 'form-control', 'id' => 'textareaRemarks', 'placeholder' => '投稿内容を登録してください', 'rows' => '3'])}}
+                {{Form::textarea('postcomment', null, ['class' => 'form-control', 'id' => 'textareaRemarks', 'placeholder' => '投稿内容を登録してください', 'rows' => '3'])}}
             </div>
         </div>
-    </div>
-    <div class="post_btn">
-    {{Form::submit('', ['class'=>'btn btn-primary btn-block'])}}
+        <div class="post_btn">
+        {{Form::submit('', ['class'=>'btn btn-primary btn-block'])}}
+        </div>
+        {{Form::close()}}
     </div>
 </div>
-{{Form::close()}}
 
 {{Form::open(['url' => '/post', 'files' => true])}}
 <div class = "postlists">

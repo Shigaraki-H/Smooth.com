@@ -14,6 +14,14 @@ class UsersController extends Controller
     public function profile(){
         return view('users.profile');
     }
+
+    public function otherProfile(Request $request){
+        $id = $request->id;
+        $postLists = Posts::where('user_id', $id)->get();
+        $userLists = Users::where('id',$id)->get();
+        return view('users.otherProfile',['postLists' => $postLists,'userLists' => $userLists]);
+    }
+
     public function search(Follows $follower){
 
         $auth_name = Auth::user()->username;
