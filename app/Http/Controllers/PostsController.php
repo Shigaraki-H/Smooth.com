@@ -48,4 +48,20 @@ class PostsController extends Controller
 
         return redirect('/top');
     }
+
+    public function editPost(Request $request){
+        
+
+        $edit_id = $request->edit_id;
+
+        $edit_text = $request->text_edit;
+
+        $post = Posts::where('id',$edit_id)->update(["post"=>$edit_text]);
+
+
+        return redirect('/top');
+
+    }
+
+    
 }

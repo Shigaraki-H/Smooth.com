@@ -36,7 +36,7 @@
                         @continue
                     @else
                     <div class="post_images">
-                        <a><img src="{{ asset('../images/'.$postLists->user->images) }}" width="90px" height="90px"></a>
+                        <a href="{{ route('users.otherProfile', ['id'=>$postLists->user->id]) }}"><img src="{{ asset('../images/'.$postLists->user->images) }}" width="90px" height="90px"></a>
                     </div>
                     <p>{{$postLists->post}}</p>
                     <p>{{$postLists->created_at}}</p>

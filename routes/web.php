@@ -39,6 +39,8 @@ Route::post('/top','PostsController@post')->name('top');;
 
 Route::get('/post/{id}', 'PostsController@delete')->name('delete');
 
+Route::post('/post/edit/{id}','PostsController@editPost');
+
 Route::get('/profile','UsersController@profile');
 
 Route::post('/profile-update','UsersController@updateProfile');

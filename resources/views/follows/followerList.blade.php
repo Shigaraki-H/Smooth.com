@@ -4,7 +4,7 @@
 
 <div class="post_container">
 <div class ="page_title">Follower Lists</div>
-{{Form::open(['url' => '/post', 'files' => true])}}
+
 @foreach($userLists as $userPics)
 
     @if(Auth::user()->isFollowed($userPics->id))
@@ -12,8 +12,8 @@
         @if(Auth::user()->id == $userPics->id)
             @continue
         @else
-        <div class="follows_list_images">
-            <a><img src="{{ asset('../images/'.$userPics->images) }}" width="90px" height="90px"></a>
+        <div id ="{{$userPics->id}}" class="follows_list_images">
+            <a href="{{ route('users.otherProfile', ['id'=>$userPics->id]) }}"><img src="{{ asset('../images/'.$userPics->images) }}" width="90px" height="90px"></a>
         </div>
         @endif
 
@@ -23,32 +23,30 @@
 
 @endforeach
 </div>
-{{Form::close()}}
+
 
 
 <div class = "postlists">
 
-@foreach($userLists as $userLists)
 
-    @if(Auth::user()->isFollowed($userLists->id))
-    
-        @foreach($postLists as $postLists)
-            @if(Auth::user()->id == $postLists->user->id)
-                @continue
-            @else
-            <div class="post_images">
-                <a><img src="{{ asset('../images/'.$postLists->user->images) }}" width="90px" height="90px"></a>
-            </div>
-            <p>{{$postLists->post}}</p>
-            <p>{{$postLists->created_at}}</p>
-            @endif
-        @endforeach
 
-    @else
+    @foreach($postLists as $postLists)
+        @if(Auth::user()->isFollowed($postLists->user->id))
+        
+                @if(Auth::user()->id == $postLists->user->id)
+                    @continue
+                @else
+                <div class="post_images">
+                    <a href="{{ route('users.otherProfile', ['id'=>$postLists->user->id]) }}"><img src="{{ asset('../images/'.$postLists->user->images) }}" width="90px" height="90px"></a>
+                </div>
+                <p>{{$postLists->post}}</p>
+                <p>{{$postLists->created_at}}</p>
+                @endif
 
-    @endif
 
-@endforeach
+        @else
+        @endif
+    @endforeach
 </div>
 
 @endsection
