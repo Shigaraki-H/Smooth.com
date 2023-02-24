@@ -13,7 +13,7 @@ class ValidationCheckPost extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,28 @@ class ValidationCheckPost extends FormRequest
     public function rules()
     {
         return [
-            //
+            'postcomment' => 'required|min:1|max:200',
+        ];
+    }
+
+     /**
+     *  バリデーション項目名定義
+     * @return array
+     */
+
+   public function attributes()
+   {
+       return [
+           'postcomment' => '投稿内容',
+       ];
+    }
+
+    public function messages()
+    {
+        return [
+            'postcomment.required' => ':attributeを入力してください。',
+            'postcomment.min' => ':attributeは1文字以上で入力してください。',
+            'postcomment.max' => ':attributeは200文字以下で入力してください。',
         ];
     }
 }

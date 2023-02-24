@@ -8,6 +8,8 @@ use App\Users;
 use App\Posts;
 use App\Follows;
 
+use App\Http\Requests\ValidationCheckPost;
+
 class PostsController extends Controller
 {
     //
@@ -17,7 +19,7 @@ class PostsController extends Controller
         return view('posts.index',['postLists' => $postLists,'userLists' => $userLists]);
     }
 
-    public function post(Request $request){
+    public function post(ValidationCheckPost $request){
 
         $id = auth()->id(); 
         
@@ -49,7 +51,7 @@ class PostsController extends Controller
         return redirect('/top');
     }
 
-    public function editPost(Request $request){
+    public function editPost(ValidationCheckPost $request){
         
 
         $edit_id = $request->edit_id;

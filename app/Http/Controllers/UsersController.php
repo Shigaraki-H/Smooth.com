@@ -8,6 +8,8 @@ use App\Users;
 use App\Posts;
 use App\Follows;
 
+use App\Http\Requests\ValidationCheckUpdateProfile;
+
 class UsersController extends Controller
 {
     //
@@ -46,7 +48,7 @@ class UsersController extends Controller
         return view('users.search',['userLists' => $userLists]);
     }
 
-    public function updateProfile(Request $request){
+    public function updateProfile(ValidationCheckUpdateProfile $request){
         $id = Auth::user()->id;
         $reUsername = $request->input('inputName');
         $reMail = $request->input('inputEmail');
@@ -60,45 +62,6 @@ class UsersController extends Controller
             \DB::table('users')->where('id',$id)->update(["images"=>$reIcon]);
 
             return redirect('/profile');
-        }
-
-
-        if($rePassword == $rePassConfi && !(empty($rePassConfi))){
-
-            $rePassConfi = bcrypt($rePassConfi);
-
-            \DB::table('users')->where('id',$id)->update(["password"=>$rePassConfi]);
-
-            return redirect('/profile');
-        }elseif(!(empty($reUsername))){
-            \DB::table('users')->where('id',$id)->update(["username"=>$reUsername]);
-            return redirect('/profile');
-        }elseif(!(empty($reUsername)) && !(empty($reMail))){
-            \DB::table('users')->where('id',$id)->update(["username"=>$reUsername,"mail"=>$reMail]);
-            return redirect('/profile');
-        }elseif(!(empty($reUsername)) && !(empty($reMail)) && !(empty($reBio))){
-            \DB::table('users')->where('id',$id)->update(["username"=>$reUsername,"mail"=>$reMail,"bio"=>$reBio]);
-            return redirect('/profile');
-        }elseif(!(empty($reUsername)) && !(empty($reMail)) && !(empty($reBio)) && !(empty($reIcon))){
-            \DB::table('users')->where('id',$id)->update(["username"=>$reUsername,"mail"=>$reMail,"bio"=>$reBio,"images"=>$reIcon]);
-            return redirect('/profile');
-        }elseif(!(empty($reMail))){
-            \DB::table('users')->where('id',$id)->update(["mail"=>$reMail]);
-            return redirect('/profile');
-        }elseif(!(empty($reMail)) && !(empty($reBio))){
-            \DB::table('users')->where('id',$id)->update(["mail"=>$reMail,"bio"=>$reBio]);
-            return redirect('/profile');
-        }elseif(!(empty($reMail)) && !(empty($reBio)) && !(empty($reIcon))){
-            \DB::table('users')->where('id',$id)->update(["mail"=>$reMail,"bio"=>$reBio,"images"=>$reIcon]);
-            return redirect('/profile');
-        }elseif(!(empty($reBio))){
-            \DB::table('users')->where('id',$id)->update(["bio"=>$reBio]);
-            return redirect('/profile');
-        }elseif(!(empty($reBio)) && !(empty($reIcon))){
-            \DB::table('users')->where('id',$id)->update(["bio"=>$reBio,"images"=>$reIcon]);
-            return redirect('/profile');
-        }else{
-            return view('users.profile');
         }
 
 

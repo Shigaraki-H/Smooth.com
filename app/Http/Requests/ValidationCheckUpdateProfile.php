@@ -34,7 +34,7 @@ class ValidationCheckUpdateProfile extends FormRequest
             'inputName' => 'required|min:2|max:12',
             'inputEmail' => 'required|email|min:5|max:40|unique:users',
             'inputPassword' => 'required|string|min:8|max:20|confirmed',
-            'inputBio' => 'required|string|max:150|confirmed',
+            'inputBio' => 'max:150',
             'image' => 'mimes:jpg,png,bmp,gif,svg',
         ];
     }
@@ -61,7 +61,7 @@ class ValidationCheckUpdateProfile extends FormRequest
         return [
             'inputName.required' => ':attributeを入力してください。',
             'inputEmail.max' => ':attributeは40文字以下で入力してください。',
-            'inputName.required' => ':attributeを入力してください。',
+            'inputEmail.required' => ':attributeを入力してください。',
             'inputName.min' => ':attributeは2文字以上で入力してください。',
             'inputName.max' => ':attributeは12文字以下で入力してください。',
             'inputPassword.required' => ':attributeを入力してください。',

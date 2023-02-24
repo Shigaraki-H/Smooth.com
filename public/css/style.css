@@ -171,3 +171,7 @@ header{
     padding : 10px;
 
 }
+
+.alert{
+    color: red;
+}
