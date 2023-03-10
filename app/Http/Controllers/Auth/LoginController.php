@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ValidationCheckLogin;
 use Auth;
 
+use App\Rules\password_is_vaild;
+
 class LoginController extends Controller
 {
     /*
@@ -45,7 +47,7 @@ class LoginController extends Controller
         return view("auth.login");
     }
 
-    public function login(Request $request){
+    public function login(ValidationCheckLogin $request){
         if($request->isMethod('post')){
 
             $data=$request->only('mail','password');
@@ -53,6 +55,8 @@ class LoginController extends Controller
             //↓ログイン条件は公開時には消すこと
             if(Auth::attempt($data)){
                 return redirect('/top');
+            }else{
+                return view("auth.login");
             }
         }
         return view("auth.login");

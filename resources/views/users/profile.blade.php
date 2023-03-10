@@ -2,17 +2,11 @@
 
 @section('content')
 
-<div class = "register_area">
-    <div class = "register_form">
-@if ($errors->any())
-    <div class="alert alert-danger mt-3">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+<div class = "alert">
+@foreach ($errors->all() as $error)
+  <li>{{$error}}</li>
+@endforeach
+</div>
 
 {{Form::open(['url' => '/profile-update', 'files' => true])}}
 

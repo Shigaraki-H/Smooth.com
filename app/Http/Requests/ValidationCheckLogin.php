@@ -9,7 +9,6 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Request as PostRequest;
 use App\Http\Controllers\Auth;
-use App\Rules\password_is_vaild;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -36,7 +35,7 @@ class ValidationCheckLogin extends FormRequest
         
         return [
             'mail' => 'required|exists:users',
-            'password' => ['required',new password_is_vaild],
+            'password' => 'required|exists:users',
         ];
     }
 

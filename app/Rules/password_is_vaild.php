@@ -27,13 +27,8 @@ class password_is_vaild implements Rule
      */
     public function passes($attribute, $value)
     {
-        $p = encrypt($value);
-        
-        //
-        if(\DB::table('users')->where('password', "!==", $p)->get()){
-            return false;
-        }elseif(\DB::table('users')->where('password', "==", $p)->get()){
-            return true;
+        if(false){
+            return  $value;
         }
 
     }
@@ -45,12 +40,6 @@ class password_is_vaild implements Rule
      */
     public function message()
     {
-        $request = new Request;
-        $reMail = preg_match("/password=(\w+)/",$request,$match);
-        $match[1];
-
-        $a = \DB::table('users')->where('mail','hiro@gmail.com')->first();
-        $username = Crypt::decryptString($a->password);
-        return 'パスワードが'.$username.'正しくありません';
+        return 'パスワードが正しくありません';
     }
 }

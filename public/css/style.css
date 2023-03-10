@@ -175,3 +175,14 @@ header{
 .alert{
     color: red;
 }
+
+.search_btn{
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.search_area{
+    width: 1260px;
+    
+}
