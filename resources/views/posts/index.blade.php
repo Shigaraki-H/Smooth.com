@@ -2,17 +2,6 @@
 
 @section('content')
 
-<div class = "register_area">
-    <div class = "register_form">
-@if ($errors->any())
-    <div class="alert alert-danger mt-3">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
 
 <div class="post_container">
     <div class ="mypost">
@@ -38,8 +27,8 @@
     <p>{{$postLists->post}}</p>
     <p>{{$postLists->created_at}}</p>
     <div class = "btn-area">
-        <p><a class="btn btn-success pull-right js-modal-open" href="" data-target = "{{$postLists->id}}"></a></p>
-        <p><a class="btn btn-danger" href="{{Route('delete',$postLists->id)}}" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"></a></p>
+        <a class="btn btn-success pull-right js-modal-open" href="" data-target = "{{$postLists->id}}"></a>
+        <a class="btn btn-danger" href="{{Route('delete',$postLists->id)}}" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"></a>
     </div>
     <div class="modal js-modal">
 		<form action="/post/edit/{{$postLists->id}}" method="post" >
@@ -52,7 +41,7 @@
 				</div>
 				<div class = "button_area">
 					<p><a class="js-modal-close" href="">閉じる</a></p>
-					<p><input type="submit" value = "更新" class ="btn-success"></p>
+					<p><input type="submit" value = "" class ="btn-success"></p>
 				</div>
 				<p><input type="hidden" class="text-edit" value = "" name = "edit_id"></p>
 			</div><!--modal__inner-->

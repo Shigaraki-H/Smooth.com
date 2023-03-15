@@ -9,11 +9,11 @@
         <div class ="search_area">
         {{Form::textarea('textareaRemarks', null, ['class' => 'form-control', 'id' => 'textareaRemarks', 'placeholder' => 'ユーザー名', 'rows' => '3'])}}
         </div>
-        
         <div class ="search_btn">
             {{Form::submit('', ['class'=>'btn btn-search btn-block'])}}
         </div>
         {!! Form::close() !!}
+        
     </div>
 </div>
 
