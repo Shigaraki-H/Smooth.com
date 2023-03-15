@@ -12,7 +12,13 @@
             @endforeach
         </ul>
     </div>
+@elseif(session('loginError'))
+    <div class="alert alert-danger mt-3">
+        <span class = "text-danger">{{ session('loginError')}}</span>
+    </div>
 @endif
+
+
 
 {!! Form::open() !!}
 

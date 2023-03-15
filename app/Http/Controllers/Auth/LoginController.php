@@ -56,7 +56,10 @@ class LoginController extends Controller
             if(Auth::attempt($data)){
                 return redirect('/top');
             }else{
-                return view("auth.login");
+
+                return redirect("/login")
+                ->with('loginError','メールアドレスもしくはパスワードが違います。')
+                ->withInput();
             }
         }
         return view("auth.login");

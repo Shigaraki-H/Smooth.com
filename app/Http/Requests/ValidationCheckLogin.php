@@ -35,7 +35,7 @@ class ValidationCheckLogin extends FormRequest
         
         return [
             'mail' => 'required|exists:users',
-            'password' => 'required|exists:users',
+            'password' => 'required',
         ];
     }
 
