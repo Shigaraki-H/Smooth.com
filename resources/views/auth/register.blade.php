@@ -37,7 +37,7 @@
 
 <p>
 {{ Form::label('パスワード確認') }}
-{{ Form::password('password-confirm',null,['class' => 'input']) }}
+{{ Form::password('password_confirmation',null,['class' => 'input']) }}
 </p>
 
 {{ Form::submit('登録') }}

@@ -28,7 +28,7 @@
     <p>{{$postLists->created_at}}</p>
     <div class = "btn-area">
         <a class="btn btn-success pull-right js-modal-open" href="" data-target = "{{$postLists->id}}"></a>
-        <a class="btn btn-danger" href="{{Route('delete',$postLists->id)}}" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"></a>
+        <a class="btn btn-danger" href="{{Route('delete',$postLists->id)}}" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"><div class = "btn-trash"></div></a>
     </div>
     <div class="modal js-modal">
 		<form action="/post/edit/{{$postLists->id}}" method="post" >
@@ -41,7 +41,7 @@
 				</div>
 				<div class = "button_area">
 					<p><a class="js-modal-close" href="">閉じる</a></p>
-					<p><input type="submit" value = "" class ="btn-success"></p>
+				<p><input type="submit" value = "" class ="btn-success"></p>
 				</div>
 				<p><input type="hidden" class="text-edit" value = "" name = "edit_id"></p>
 			</div><!--modal__inner-->
@@ -52,21 +52,6 @@
 </div>
 
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script>
-    $(function(){
-    $('.js-modal-open').on('click',function(){
-        $('.js-modal').fadeIn();
-		var post_id = $(this).attr("data-target");
-		$('.text-edit').val(post_id);
-        return false;
-    });
-    $('.js-modal-close').on('click',function(){
-        $('.js-modal').fadeOut();
-        return false;
-    });
-});
-</script>
 
 
 @endsection

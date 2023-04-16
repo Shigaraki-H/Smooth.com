@@ -51,7 +51,7 @@ class PostsController extends Controller
         return redirect('/top');
     }
 
-    public function editPost(ValidationCheckPost $request){
+    public function editPost(Request $request){
         
 
         $edit_id = $request->edit_id;

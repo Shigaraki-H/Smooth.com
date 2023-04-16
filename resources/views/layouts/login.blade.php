@@ -29,7 +29,8 @@
                         <p>{{Auth::user()->username}}さん<a><img src="{{ asset('../images/'.Auth::user()->images) }}" width="90px" height="90px"></a></p>
                     </div>
                 <div>
-                <ul>
+                <a href="#" class="drawer">ドロワーデモ</a>
+                <ul class="drawer-list">
                     <li><a href="/top">ホーム</a></li>
                     <li><a href="/profile">プロフィール</a></li>
                     <li><a href="/logout">ログアウト</a></li>
@@ -72,7 +73,24 @@
     </div>
     <footer>
     </footer>
-    <script src="JavaScriptファイルのURL"></script>
-    <script src="JavaScriptファイルのURL"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+    $(function(){
+        $('.js-modal-open').on('click',function(){
+            $('.js-modal').fadeIn();
+            var post_id = $(this).attr("data-target");
+            $('.text-edit').val(post_id);
+            return false;
+        });
+        $('.js-modal-close').on('click',function(){
+            $('.js-modal').fadeOut();
+            return false;
+        });
+        $(".drawer").click (function() {
+            $(".drawer-list").slideToggle();
+        });
+        
+    });
+    </script>
 </body>
 </html>
