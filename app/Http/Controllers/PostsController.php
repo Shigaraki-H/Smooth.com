@@ -51,12 +51,12 @@ class PostsController extends Controller
         return redirect('/top');
     }
 
-    public function editPost(Request $request){
+    public function editPost(ValidationCheckPost $request){
         
 
         $edit_id = $request->edit_id;
 
-        $edit_text = $request->text_edit;
+        $edit_text = $request->postcomment;
 
         $post = Posts::where('id',$edit_id)->update(["post"=>$edit_text]);
 

@@ -37,7 +37,7 @@
 			</div>
 			<div class="modal__content">
 				<div class = "edit-container">
-					<textarea name="text_edit"></textarea>
+					<textarea name="postcomment"></textarea>
 				</div>
 				<div class = "button_area">
 					<p><a class="js-modal-close" href="">閉じる</a></p>

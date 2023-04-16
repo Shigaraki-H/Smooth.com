@@ -144,7 +144,7 @@ header{
     background-image: url("../images/edit.png") ;
 }
 
-/* .btn-success{
+.btn-success:hover{
     background: rgb(0, 127, 136);
     display: flex;
     margin: 10px;
@@ -155,7 +155,7 @@ header{
     background-size: cover;
     background-image: url("../images/edit.png") ;
     overflow: hidden;
-} */
+}
 
 
 /* .btn-danger{
