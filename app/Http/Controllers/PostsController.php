@@ -14,7 +14,7 @@ class PostsController extends Controller
 {
     //
     public function index(){
-        $postLists = Posts::get();
+        $postLists = Posts::latest('updated_at')->get();
         $userLists = Users::get(); 
         return view('posts.index',['postLists' => $postLists,'userLists' => $userLists]);
     }

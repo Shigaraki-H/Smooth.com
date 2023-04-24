@@ -12,13 +12,13 @@ class FollowsController extends Controller
 {
     //
     public function followList(){
-        $postLists = Posts::get();
+        $postLists = Posts::latest('updated_at')->get();
         $userLists = Users::get();
         return view('follows.followList',['userLists'=>$userLists,'postLists'=>$postLists]);
     }
     
     public function followerList(){
-        $postLists = Posts::get();
+        $postLists = Posts::latest('updated_at')->get();
         $userLists = Users::get();
         return view('follows.followerList',['postLists'=>$postLists],['userLists'=>$userLists]);
     }

@@ -19,7 +19,7 @@ class UsersController extends Controller
 
     public function otherProfile(Request $request){
         $id = $request->id;
-        $postLists = Posts::where('user_id', $id)->get();
+        $postLists = Posts::latest('updated_at')->where('user_id', $id)->get();
         $userLists = Users::where('id',$id)->get();
         return view('users.otherProfile',['postLists' => $postLists,'userLists' => $userLists]);
     }
@@ -35,7 +35,7 @@ class UsersController extends Controller
     }
 
     public function searchResult(Request $request){
-        
+
         $auth_name = Auth::user()->username;
 
         $keyword = $request->input("inputkeyword");
