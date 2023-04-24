@@ -22,58 +22,76 @@
 <body>
     <header>
         <div id = "head">
-        <h1><a href="/top"><img src="images/atlas.png"></a></h1>
-            <div id="">
+            <h1><a href="/top"><img src="images/atlas.png"></a></h1>
                 <div id="">
-                    <div class="post_images">
-                        <p>{{Auth::user()->username}}さん<a><img src="{{ asset('../images/'.Auth::user()->images) }}" width="90px" height="90px"></a></p>
+                    <div id="">
+                        <ul class="accordion1">
+                            <li class="ac_boxs">
+                                    <div class="post_images">
+                                        <p class ="user-name">{{Auth::user()->username}}  さん
+                                            <div href="#" class="drawer">
+                                                
+                                                
+                                                <div class ="menu-bar">
+                                                    <span class="bar1"></span>
+                                                </div>
+
+                                            </div>
+                                        </p>
+                                            <div><img src="{{ asset('../images/'.Auth::user()->images) }}" width="90px" height="90px"></div>
+                                    </div>
+                            </li>
+                        </ul>
                     </div>
-                <div>
-                <a href="#" class="drawer">ドロワーデモ</a>
-                <ul class="drawer-list">
-                    <li><a href="/top">ホーム</a></li>
-                    <li><a href="/profile">プロフィール</a></li>
-                    <li><a href="/logout">ログアウト</a></li>
-                </ul>
-            </div>
+                </div>
         </div>
     </header>
     <div class = "register_area">
         <div class = "register_form">
-    @if ($errors->any())
-        <div class="alert alert-danger mt-3">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-    <div id="row">
-        <div id="container">
+            @if ($errors->any())
+            <div class="alert alert-danger mt-3">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
+                <div id="row">
+                    <div id="container">
+                        
+                        @yield('content')
+                    </div >
+                    <div id="side-bar">
+                        <div id="confirm">
+                                <div class="inner-bar">
+                                    <ul class="drawer-list">
+                                        <li><a href="/top">ホーム</a></li>
+                                        <li><a href="/profile">プロフィール</a></li>
+                                        <li><a href="/logout">ログアウト</a></li>
+                                    </ul>
+                                </div>
 
-            @yield('content')
-        </div >
-        <div id="side-bar">
-            <div id="confirm">
-                <p>{{Auth::user()->username}}さんの</p>
-                <div>
-                <p>フォロー数</p>
-                <p><span>{{ Auth::user()->Follows()->get()->count() }}名</span></p>
-                </div>
-                <p class="btn"><a href="/followList">フォローリスト</a></p>
-                <div>
-                <p>フォロワー数</p>
-                <p><span>{{ Auth::user()->Followers()->get()->count() }}名</span></p>
-                </div>
-                <p class="btn"><a href="followerList">フォロワーリスト</a></p>
-            </div>
-            <p class="btn"><a href="/search">ユーザー検索</a></p>
+                                <p>{{Auth::user()->username}}さんの</p>
+                                <div>
+                                    <p>フォロー数</p>
+                                    <p><span>{{ Auth::user()->Follows()->get()->count() }}名</span></p>
+                                </div>
+                                <p class="btn-blue"><a href="/followList">フォローリスト</a></p>
+                                <div>
+                                    <p>フォロワー数</p>
+                                    <p><span>{{ Auth::user()->Followers()->get()->count() }}名</span></p>
+                                </div>
+                                <p class="btn-blue"><a href="followerList">フォロワーリスト</a></p>
+                        </div>
+                            <p class="btn-blue"><a href="/search">ユーザー検索</a></p>
+                    </div>
         </div>
     </div>
     <footer>
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
     <script>
     $(function(){
         $('.js-modal-open').on('click',function(){
@@ -86,11 +104,16 @@
             $('.js-modal').fadeOut();
             return false;
         });
-        $(".drawer").click (function() {
+        
+        
+        $('.drawer').click(function() {
+            $('.bar1, .bar2, .bar3').toggleClass('open');
             $(".drawer-list").slideToggle();
         });
         
     });
     </script>
+
+
 </body>
 </html>

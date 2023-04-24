@@ -32,23 +32,24 @@
     @foreach($postLists as $postLists)
         @if(Auth::user()->isFollowing($postLists->user->id))
 
+        <div class="other_contents">
                     @if(Auth::user()->id == $postLists->user->id)
                         @continue
                     @else
-                    <div class="post_images">
+                    <div class="post_other_img">
                         <a href="{{ route('users.otherProfile', ['id'=>$postLists->user->id]) }}"><img src="{{ asset('../images/'.$postLists->user->images) }}" width="90px" height="90px"></a>
+                        <div class ="name_status">
+                        <p class ="user_block">{{$postLists->user->username}}</p>
+                        <p class ="post_block">{{$postLists->post}}</p>
+                        </div>
+                        <p class ="created_block">{{$postLists->created_at}}</p>
                     </div>
-                    <p>{{$postLists->post}}</p>
-                    <p>{{$postLists->created_at}}</p>
+        </div>
                     @endif
-
+                    
         @else
         @endif
     @endforeach
-
-
-
-
 </div>
 
 

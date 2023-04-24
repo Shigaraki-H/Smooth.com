@@ -13,27 +13,27 @@
 <div class="confirmForm">
     <a class = "username">
     <p>username</p>
-{{Form::text('inputName', null, ['class' => 'form-control', 'id' => 'inputName', 'placeholder' => Auth::user()->username])}}
+{{Form::text('username', null, ['class' => 'form-control', 'id' => 'inputName', 'placeholder' => Auth::user()->username])}}
 </a>
 <a class = "mailaddress">
     <p>mail address</p>
-{{Form::email('inputEmail', null, ['class' => 'form-control','id' => 'inputEmail','placeholder' => Auth::user()->mail])}}
+{{Form::email('mail', null, ['class' => 'form-control','id' => 'inputEmail','placeholder' => Auth::user()->mail])}}
 </a>
 <a class = "password">
     <p>password</p>
-    {{Form::password('inputPassword', ['class' => 'form-control','id' => 'inputPassword','placeholder' => 'パスワード'])}}
+    {{Form::password('password', ['class' => 'form-control','id' => 'inputPassword','placeholder' => 'パスワード'])}}
 </a>
     <a class = "passwordcomfirm">
         <p>password comfirm</p>
-        {{Form::password('inputPassConf', ['class' => 'form-control','id' => 'inputPassword','placeholder' => 'パスワード確認'])}}
+        {{Form::password('password_confirmation', ['class' => 'form-control','id' => 'inputPassword','placeholder' => 'パスワード確認'])}}
     </a>
     <a class = "bio">
     <p>bio</p>
-    {{Form::text('inputBio', null, ['class' => 'form-control', 'id' => 'inputName', 'placeholder' => Auth::user()->bio])}}
+    {{Form::text('bio', null, ['class' => 'form-control', 'id' => 'inputName', 'placeholder' => Auth::user()->bio])}}
 </a>
 <a class = "iconimage">
     <p>icon image</p>
-    {{Form::file('image', ['class'=>'custom-file-input','id'=>'fileImage'])}}
+    {{Form::file('images', ['class'=>'custom-file-input','id'=>'fileImage'])}}
 </a>
 
 {{Form::submit('更新', ['class'=>'btn btn-update btn-block'])}}

@@ -24,12 +24,19 @@
     <h4>投稿内容一覧</h4>
 
     @foreach($postLists as $postLists)
+    @if(Auth::user()->isFollowing($postLists->user->id) || Auth::id() == $postLists->user_id)
     <p>{{$postLists->post}}</p>
     <p>{{$postLists->created_at}}</p>
+
+    @if(Auth::id() == $postLists->user_id)
     <div class = "btn-area">
         <a class="btn btn-success pull-right js-modal-open" href="" data-target = "{{$postLists->id}}"></a>
         <a class="btn btn-danger" href="{{Route('delete',$postLists->id)}}" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"><div class = "btn-trash"></div></a>
     </div>
+    @else
+    <div class = "btn-area">
+    </div>
+    @endif
     <div class="modal js-modal">
 		<form action="/post/edit/{{$postLists->id}}" method="post" >
 			<div class="modal__bg js-modal-close">
@@ -47,6 +54,7 @@
 			</div><!--modal__inner-->
 		</div><!--modal-->
 		{{csrf_field()}}
+        @endif
     @endforeach
     
 </div>

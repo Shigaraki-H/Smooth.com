@@ -3,34 +3,36 @@
 @section('content')
 
 <div class="post_container">
-<div class ="page_title">
+    <div class ="page_title">
 
-@foreach($userLists as $userProfile)
+        @foreach($userLists as $userProfile)
 
-    <div class="follows_list_images">
-        <a><img src="{{ asset('../images/'.$userProfile->images) }}" width="90px" height="90px"></a>
+            <div class="follows_list_images">
+                <a><img src="{{ asset('../images/'.$userProfile->images) }}" width="90px" height="90px"></a>
+                <div class ="name_status">
+                    <p class ="user_block">name<a class = "user_title">{{$userProfile->username}}</a></p>
+                    <p class ="bio_block">bio<a class = "bio_title">{{$userProfile->bio}}</a></p>
+                </div>
+            </div>
+
+            <div class = "follow_btn">
+                    @if(Auth::user()->isFollowing($userProfile->id))
+                        <form action="{{ route('unfollow', ['id' => $userProfile->id]) }}" method="POST">
+                            {{ csrf_field() }}
+
+                            <button type="submit" class="btn btn-unfollow">フォロー解除</button>
+                        </form>
+                    @else
+                        <form action="{{ route('follow', ['id' => $userProfile->id]) }}" method="POST">
+                            {{ csrf_field() }}
+
+                            <button type="submit" class="btn btn-follow">フォローする</button>
+                        </form>
+                    @endif
+            </div>
+
+        @endforeach
     </div>
-    <div class="follows_list_name">name<p>{{$userProfile->username}}</p></div>
-    <div class="follows_list_bio">bio<p>{{$userProfile->bio}}</p></div>
-
-    <div class = "follow_btn">
-            @if(Auth::user()->isFollowing($userProfile->id))
-                <form action="{{ route('unfollow', ['id' => $userProfile->id]) }}" method="POST">
-                    {{ csrf_field() }}
-
-                    <button type="submit" class="btn btn-unfollow">フォロー解除</button>
-                </form>
-            @else
-                <form action="{{ route('follow', ['id' => $userProfile->id]) }}" method="POST">
-                    {{ csrf_field() }}
-
-                    <button type="submit" class="btn btn-follow">フォローする</button>
-                </form>
-            @endif
-    </div>
-
-@endforeach
-</div>
 </div>
 
 
@@ -39,12 +41,14 @@
 
     @foreach($postLists as $postLists)
 
-        <div class="post_images">
+        <div class="post_other_img">
             <a><img src="{{ asset('../images/'.$postLists->user->images) }}" width="90px" height="90px"></a>
+            <div class ="name_status">
+                <p class ="user_block">{{$postLists->user->username}}</p>
+                <p class ="post_block">{{$postLists->post}}</p>
+            </div>
+            <p class ="created_block">{{$postLists->created_at}}</p>
         </div>
-        <p>{{$postLists->post}}</p>
-        <p>{{$postLists->created_at}}</p>
-
 
 
     @endforeach

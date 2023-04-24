@@ -7,7 +7,7 @@
 <div class="post_container">
     <div class ="mypost">
         <div class ="search_area">
-        {{Form::textarea('textareaRemarks', null, ['class' => 'form-control', 'id' => 'textareaRemarks', 'placeholder' => 'ユーザー名', 'rows' => '3'])}}
+        {{Form::textarea('inputkeyword', null, ['class' => 'form-control', 'id' => 'textareaRemarks', 'placeholder' => 'ユーザー名', 'rows' => '3'])}}
         </div>
         <div class ="search_btn">
             {{Form::submit('', ['class'=>'btn btn-search btn-block'])}}
@@ -29,13 +29,16 @@
                 <form action="{{ route('unfollow', ['id' => $userLists->id]) }}" method="POST">
                     {{ csrf_field() }}
 
-                    <button type="submit" class="btn btn-unfollow">フォロー解除</button>
+                    <div class ="unfollow_btn">
+                        {{Form::submit('フォロー解除', ['class'=>'btn btn-unfollow'])}}
+                    </div>
                 </form>
             @else
                 <form action="{{ route('follow', ['id' => $userLists->id]) }}" method="POST">
                     {{ csrf_field() }}
-
-                    <button type="submit" class="btn btn-follow">フォローする</button>
+                    <div class ="follow_btn">
+                    {{Form::submit('フォローする', ['class'=>'btn btn-follow'])}}
+                    </div>
                 </form>
             @endif
     </div>

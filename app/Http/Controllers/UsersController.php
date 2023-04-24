@@ -35,13 +35,16 @@ class UsersController extends Controller
     }
 
     public function searchResult(Request $request){
+        
+        $auth_name = Auth::user()->username;
 
         $keyword = $request->input("inputkeyword");
         if($request->has("inputkeyword") && $keyword != ""){
             $userLists = \DB::table('users')->where('username', 'like',"%".$keyword."%")->get();
             
         }else{
-            $userLists = \DB::table('users')->get();
+            $userLists = \DB::table('users')
+            ->where('username', "!=",$auth_name)->get();
         }
 
 
@@ -50,20 +53,37 @@ class UsersController extends Controller
 
     public function updateProfile(ValidationCheckUpdateProfile $request){
         $id = Auth::user()->id;
-        $reUsername = $request->input('inputName');
-        $reMail = $request->input('inputEmail');
-        $rePassword = $request->input('inputPassword');
-        $rePassConfi = $request->input('inputPassConf');
-        $reBio = $request->input('inputBio');
-        $reIcon = $request->input('image');
+        $reUsername = $request->input('username');
+        $reMail = $request->input('mail');
+        $rePassword = $request->input('password');
+        $rePassConfi = $request->input('password_confirmation');
+        $reBio = $request->input('bio');
+        $reIcon = $request->input('images');
 
-        if($request->image){
+        if($reUsername){
+            \DB::table('users')->where('id',$id)->update(["username"=>$reUsername]);
+            
+        }
+
+        if($reMail){
+            \DB::table('users')->where('id',$id)->update(["mail"=>$reMail]);
+        }
+
+        if($rePassword){
+            $rePassword = bcrypt($rePassword);
+            \DB::table('users')->where('id',$id)->update(["password"=>$rePassword]);
+        }
+
+        if($reBio){
+            \DB::table('users')->where('id',$id)->update(["bio"=>$reBio]);
+        }
+
+        if($reIcon){
             $reIcon = $request->image->getClientOriginalName();;
             \DB::table('users')->where('id',$id)->update(["images"=>$reIcon]);
 
-            return redirect('/profile');
         }
 
-
+        return redirect('/top');
     }
 }
