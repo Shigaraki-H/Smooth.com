@@ -49,7 +49,7 @@
                 </div>
                 <div class="modal__content">
                     <div class = "edit-container">
-                        <textarea name="postcomment" placeholder="{{$postLists->id}}"></textarea>
+                        <textarea name="postcomment" placeholder="{{$postLists->post}}"></textarea>
                     </div>
                     <div class = "button_area">
                         <p><a class="js-modal-close" href=""></a></p>
