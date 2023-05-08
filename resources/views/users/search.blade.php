@@ -13,17 +13,22 @@
             {{Form::submit('', ['class'=>'btn btn-search btn-block'])}}
         </div>
         {!! Form::close() !!}
-        
     </div>
+    @if(!empty($keyword))
+    <p class ="keyword">検索ワード：{{$keyword}}</p>
+    @endif
 </div>
 
 
-<h4>ユーザー一覧</h4>
+<h4>ユーザー 一覧</h4>
 @foreach($userLists as $userLists)
 <div class = "userlists">
-    <p>{{$userLists->images}}</p>
-    <p>{{$userLists->username}}</p>
-</div>
+    <div class="post_other_img">
+        <a><img src="{{ asset('../storage/images/'.$userLists->images) }}" width="90px" height="90px"></a>
+            <div class ="name_status">
+            <p class="username-title">{{$userLists->username}}</p>
+            </div>
+    </div>
     <div class = "follow_btn">
             @if(Auth::user()->isFollowing($userLists->id))
                 <form action="{{ route('unfollow', ['id' => $userLists->id]) }}" method="POST">
@@ -42,6 +47,8 @@
                 </form>
             @endif
     </div>
+
+</div>
 @endforeach
 
 @endsection

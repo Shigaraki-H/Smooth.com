@@ -8,7 +8,7 @@
         @foreach($userLists as $userProfile)
 
             <div class="follows_list_images">
-                <a><img src="{{ asset('../images/'.$userProfile->images) }}" width="90px" height="90px"></a>
+                <a><img src="{{ asset('../storage/images/'.$userProfile->images) }}" width="90px" height="90px"></a>
                 <div class ="name_status">
                     <p class ="user_block">name<a class = "user_title">{{$userProfile->username}}</a></p>
                     <p class ="bio_block">bio<a class = "bio_title">{{$userProfile->bio}}</a></p>
@@ -41,13 +41,13 @@
 
     @foreach($postLists as $postLists)
 
+    <p class ="created_block">{{$postLists->created_at}}</p>
         <div class="post_other_img">
-            <a><img src="{{ asset('../images/'.$postLists->user->images) }}" width="90px" height="90px"></a>
+            <a><img src="{{ asset('../storage/images/'.$postLists->user->images) }}" width="90px" height="90px"></a>
             <div class ="name_status">
                 <p class ="user_block">{{$postLists->user->username}}</p>
                 <p class ="post_block">{{$postLists->post}}</p>
             </div>
-            <p class ="created_block">{{$postLists->created_at}}</p>
         </div>
 
 

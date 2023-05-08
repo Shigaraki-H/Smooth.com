@@ -22,7 +22,7 @@
 <body>
     <header>
         <div id = "head">
-            <h1><a href="/top"><img src="images/atlas.png"></a></h1>
+            <h1><a href="/top"><img src="{{ asset('../images/logo.png') }}"></a></h1>
                 <div id="">
                     <div id="">
                         <ul class="accordion1">
@@ -38,7 +38,7 @@
 
                                             </div>
                                         </p>
-                                            <div><img src="{{ asset('../images/'.Auth::user()->images) }}" width="90px" height="90px"></div>
+                                            <div><img src="{{ asset('../storage/images/'.Auth::user()->images) }}" width="90px" height="90px"></div>
                                     </div>
                             </li>
                         </ul>
@@ -56,7 +56,7 @@
                         @endforeach
                     </ul>
                 </div>
-                @endif
+            @endif
                 <div id="row">
                     <div id="container">
                         
@@ -82,10 +82,10 @@
                                     <p>フォロワー数</p>
                                     <p><span>{{ Auth::user()->Followers()->get()->count() }}名</span></p>
                                 </div>
-                                <p class="btn-blue"><a href="followerList">フォロワーリスト</a></p>
+                                <p class="btn-blue"><a href="/followerList">フォロワーリスト</a></p>
                         </div>
                             <p class="btn-blue"><a href="/search">ユーザー検索</a></p>
-                    </div>
+                </div>
         </div>
     </div>
     <footer>

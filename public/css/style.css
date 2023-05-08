@@ -11,6 +11,11 @@ header{
 }
 
 /* main content */
+h4{
+    font-size: 30px;
+    font-weight: bolder;
+}
+
 #row{
     display: flex;
     flex-flow: row wrap;
@@ -99,7 +104,20 @@ header{
     padding: 0 100px;
 }
 
+.post_auth_img{
+    width: 85%;
+    display: flex;
+    padding: 0 100px;
+    border-bottom: 3px solid silver;
+}
+
 .other_contents{
+    width: 100%;
+    border-bottom: 3px solid silver;
+    height: 150px;
+}
+
+.main_contents{
     width: 100%;
     border-bottom: 3px solid silver;
     height: 150px;
@@ -123,7 +141,6 @@ header{
     margin: 10px;
     height: 80px;
     width: auto;
-    border-bottom: 3px solid silver;
     display: flex;
     justify-content: flex-end;
 }
@@ -223,8 +240,8 @@ header{
 }
 
 .search_area textarea{
-    width: 850px;
-    height: 150px;
+    width: 550px;
+    height: 100px;
     resize: none;
     border: none;
 }
@@ -365,7 +382,7 @@ header{
 
 
 .inner-bar li a{
-    width: 315px;
+    width: auto;
     display: block;
     padding: 30px;
     text-align: center;
@@ -460,6 +477,12 @@ header{
     padding: 20px;
 }
 
+.image_block{
+    justify-content:left;
+    display:flex;
+    padding: 20px;
+}
+
 .post_block{
     display:flex;
     padding: 20px;
@@ -475,9 +498,8 @@ header{
     width: 100%;
     display:flex;
     justify-content: flex-end;
-    padding-top: 13px;
-    padding-bottom: 13px;
     text-align: right;
+    border-top: 2px solid silver;
 }
 
 .follow_btn{
@@ -503,4 +525,43 @@ header{
     display:flex;
     text-align:center;
     margin: 3px 10px 0 60px;
+}
+
+.username-title{
+    font-size: 20px;
+}
+
+.userlists{
+    display: flex;
+    text-align:center;
+    padding-left: 300px;
+    padding-right: 300px;
+}
+
+.keyword{
+    text-align:center;
+    padding-left: 250px;
+    padding-top: 50px;
+    font-size: 20px;
+}
+
+.post_profile{
+    width: 70%;
+    border-radius: 50px;
+    display: flex;
+    padding: 0 100px;
+    flex-direction: column;
+}
+
+.confirmForm{
+    display: flex;
+    text-align:center;
+    padding-left: 300px;
+    padding-right: 300px;
+}
+
+.form-btn{
+    display: flex;
+    flex-direction: column;
+
 }

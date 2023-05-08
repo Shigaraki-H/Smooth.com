@@ -18,9 +18,12 @@
 
 //Auth::routes();
 
+Route::group(['middleware' => 'logged_out_auth'], function(){
+
+Route::group(['middleware' => 'guest'], function(){
 
 //ログアウト中のページ
-Route::get('/login', 'Auth\LoginController@loginView');
+Route::get('/login', 'Auth\LoginController@loginView')->middleware("logged_out_auth");
 Route::post('/login', 'Auth\LoginController@login');
 
 Route::get('/logout', 'Auth\LoginController@logout');
@@ -31,11 +34,13 @@ Route::post('/register/post', 'Auth\RegisterController@register');
 
 Route::get('/added', 'Auth\RegisterController@added');
 Route::post('/added', 'Auth\RegisterController@added');
+});
+
 
 //ログイン中のページ
 Route::get('/top','PostsController@index');
 
-Route::post('/top','PostsController@post')->name('top');;
+Route::post('/top','PostsController@post')->name('top');
 
 Route::get('/post/{id}', 'PostsController@delete')->name('delete');
 
@@ -66,3 +71,5 @@ Route::get('/followList','FollowsController@followList');
 Route::get('/followerList','FollowsController@followerList');
 
 Route::get('/otherProfile/{id}','UsersController@otherProfile')->name('users.otherProfile');
+
+});

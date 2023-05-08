@@ -32,8 +32,7 @@ class ValidationCheckUpdateProfile extends FormRequest
     {
         return [
             'username' => 'required|min:2|max:12',
-            'mail' => 'required|email|min:5|max:40|unique:users',
-            'password' => 'required|string|min:8|max:20|confirmed',
+            'mail' => 'required|email|min:5|max:40',
             'bio' => 'max:150',
             'images' => 'mimes:jpg,png,bmp,gif,svg',
         ];
@@ -64,9 +63,8 @@ class ValidationCheckUpdateProfile extends FormRequest
             'mail.required' => ':attributeを入力してください。',
             'username.min' => ':attributeは2文字以上で入力してください。',
             'username.max' => ':attributeは12文字以下で入力してください。',
-            'password.required' => ':attributeを入力してください。',
-            'password.max' => ':attributeは20文字以下で入力してください。',
-            'password.min' => ':attributeは8文字以上で入力してください。',
+            'password.max' => ':パスワードは20文字以下で入力してください。',
+            'password.min' => ':パスワードは8文字以上で入力してください。',
             'password_confirmation.required' => ':attributeを入力してください。',
             'password_confirmation.required.max' => ':attributeは20文字以下で入力してください。',
             'password_confirmation.required.min' => ':attributeは8文字以上で入力してください。',

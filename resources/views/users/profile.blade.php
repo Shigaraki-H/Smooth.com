@@ -10,33 +10,38 @@
 
 {{Form::open(['url' => '/profile-update', 'files' => true])}}
 
-<div class="confirmForm">
-    <a class = "username">
-    <p>username</p>
-{{Form::text('username', null, ['class' => 'form-control', 'id' => 'inputName', 'placeholder' => Auth::user()->username])}}
-</a>
-<a class = "mailaddress">
-    <p>mail address</p>
-{{Form::email('mail', null, ['class' => 'form-control','id' => 'inputEmail','placeholder' => Auth::user()->mail])}}
-</a>
-<a class = "password">
-    <p>password</p>
-    {{Form::password('password', ['class' => 'form-control','id' => 'inputPassword','placeholder' => 'パスワード'])}}
-</a>
-    <a class = "passwordcomfirm">
-        <p>password comfirm</p>
-        {{Form::password('password_confirmation', ['class' => 'form-control','id' => 'inputPassword','placeholder' => 'パスワード確認'])}}
-    </a>
-    <a class = "bio">
-    <p>bio</p>
-    {{Form::text('bio', null, ['class' => 'form-control', 'id' => 'inputName', 'placeholder' => Auth::user()->bio])}}
-</a>
-<a class = "iconimage">
-    <p>icon image</p>
-    {{Form::file('images', ['class'=>'custom-file-input','id'=>'fileImage'])}}
-</a>
 
-{{Form::submit('更新', ['class'=>'btn btn-update btn-block'])}}
+<div class="confirmForm">
+    <a><img src="{{ asset('../storage/images/'.Auth::user()->images) }}" width="90px" height="90px"></a>
+    <div class="post_profile">
+            <div class ="name_status">
+            <p class="username-title">username</p>
+            {{Form::text('username', Auth::user()->username, ['class' => 'form-control', 'id' => 'inputName'])}}
+            </div>
+            <div class ="name_status">
+            <p class="username-title">mailaddress</p>
+            {{Form::email('mail', Auth::user()->mail, ['class' => 'form-control','id' => 'inputEmail'])}}
+            </div>
+            <div class ="name_status">
+            <p class="username-title">password</p>
+            {{Form::password('password', ['class' => 'form-control','id' => 'inputPassword', 'placeholder' => '●●●●'])}}
+            </div>
+            <div class ="name_status">
+            <p class="username-title">password confirm</p>
+            {{Form::password('password_confirmation', ['class' => 'form-control','id' => 'inputPassword','placeholder' => '●●●●'])}}
+            </div>
+            <div class ="name_status">
+            <p class="username-title">bio</p>
+            {{Form::text('bio', Auth::user()->bio, ['class' => 'form-control', 'id' => 'inputName'])}}
+            </div>
+            <div class ="name_status">
+            <p class="username-title">icon image</p>
+            {{Form::file('images', ['class'=>'custom-file-input','id'=>'fileImage'])}}
+            </div>
+            <div class="form-btn">
+            {{Form::submit('更新', ['class'=>'btn btn-update btn-block'])}}
+            </div>
+    </div>
 </div>
 
 {{Form::close()}}

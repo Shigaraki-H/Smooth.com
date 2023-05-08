@@ -9,6 +9,8 @@ use App\Posts;
 use App\Follows;
 
 use App\Http\Requests\ValidationCheckUpdateProfile;
+use Illuminate\Support\Facades\Storage;
+
 
 class UsersController extends Controller
 {
@@ -48,7 +50,7 @@ class UsersController extends Controller
         }
 
 
-        return view('users.search',['userLists' => $userLists]);
+        return view('users.search',['userLists' => $userLists,'keyword'=>$keyword]);
     }
 
     public function updateProfile(ValidationCheckUpdateProfile $request){
@@ -60,28 +62,35 @@ class UsersController extends Controller
         $reBio = $request->input('bio');
         $reIcon = $request->input('images');
 
-        if($reUsername){
-            \DB::table('users')->where('id',$id)->update(["username"=>$reUsername]);
+        // 画像ディレクトリ名
+        $dir = '/images';
+
+        if(is_null($request->images)){
+            //画像はデフォルトのまま
+            $reIcon = Auth::user()->images;
+        }else{
+            $reIcon = $request->images->getClientOriginalName();
+            $request->file('images')->storeAs('public/' . $dir,$reIcon);
+        }
+
+        if($rePassword == $rePassConfi && !(empty($rePassConfi))){
+
+            $request->validate([
+                'password' => 'string|min:8|max:20|confirmed',
+            ]);
             
+
+            $rePassConfi = bcrypt($rePassConfi);
+
+            Users::where('id',$id)->update(["username"=>$reUsername,"mail"=>$reMail,"password"=>$rePassConfi,"bio"=>$reBio,"images"=>$reIcon]);
+
+            return redirect('/top');
+        }elseif(is_null($rePassword)){
+            Users::where('id',$id)->update(["username"=>$reUsername,"mail"=>$reMail,"bio"=>$reBio,"images"=>$reIcon]);
+            return redirect('/top');
         }
-
-        if($reMail){
-            \DB::table('users')->where('id',$id)->update(["mail"=>$reMail]);
-        }
-
-        if($rePassword){
-            $rePassword = bcrypt($rePassword);
-            \DB::table('users')->where('id',$id)->update(["password"=>$rePassword]);
-        }
-
-        if($reBio){
-            \DB::table('users')->where('id',$id)->update(["bio"=>$reBio]);
-        }
-
-        if($reIcon){
-            $reIcon = $request->image->getClientOriginalName();;
-            \DB::table('users')->where('id',$id)->update(["images"=>$reIcon]);
-
+        else{
+            return redirect('/profile');
         }
 
         return redirect('/top');

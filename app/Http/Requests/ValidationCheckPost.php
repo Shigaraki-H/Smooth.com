@@ -24,7 +24,7 @@ class ValidationCheckPost extends FormRequest
     public function rules()
     {
         return [
-            'postcomment' => 'required|min:1|max:200',
+            'postcomment' => 'required|min:1|max:150',
         ];
     }
 
@@ -45,7 +45,7 @@ class ValidationCheckPost extends FormRequest
         return [
             'postcomment.required' => ':attributeを入力してください。',
             'postcomment.min' => ':attributeは1文字以上で入力してください。',
-            'postcomment.max' => ':attributeは200文字以下で入力してください。',
+            'postcomment.max' => ':attributeは150文字以下で入力してください。',
         ];
     }
 }
