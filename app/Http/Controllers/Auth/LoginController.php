@@ -60,9 +60,9 @@ class LoginController extends Controller
                 return redirect("/login")
                 ->with('loginError','メールアドレスもしくはパスワードが違います。')
                 ->withInput();
+                return view("auth.login");
             }
         }
-        return view("auth.login");
     }
 
 

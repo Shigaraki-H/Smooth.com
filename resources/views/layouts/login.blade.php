@@ -98,6 +98,10 @@
             $('.js-modal').fadeIn();
             var post_id = $(this).attr("data-target");
             $('.text-edit').val(post_id);
+
+            var post = $(this).attr('post');
+
+            $('.modal_post').text(post);
             return false;
         });
         $('.js-modal-close').on('click',function(){

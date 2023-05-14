@@ -35,7 +35,7 @@
         </div>
         @if(Auth::id() == $postLists->user_id)
             <div class = "btn-area">
-                <a class="btn btn-success pull-right js-modal-open" href="" data-target = "{{$postLists->id}}"></a>
+                <a class="btn btn-success pull-right js-modal-open" href="" post="{{ $postLists->post }}" data-target = "{{$postLists->id}}"></a>
                 <a class="btn btn-danger" href="{{Route('delete',$postLists->id)}}" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')"><div class = "btn-trash"></div></a>
             </div>
         
@@ -44,18 +44,17 @@
             
         
         <div class="modal js-modal">
-            <form action="/post/edit/{{$postLists->id}}" method="post" >
-                <div class="modal__bg js-modal-close">
-                </div>
+            <div class="modal__bg js-modal-close"></div>
                 <div class="modal__content">
+                    <form action="/post/edit/{{$postLists->id}}" method="post" >
                     <div class = "edit-container">
-                        <textarea name="postcomment" placeholder="{{$postLists->post}}"></textarea>
+                        <textarea name="postcomment" class="modal_post"></textarea>
                     </div>
+                    <p><input type="hidden" class="text-edit" value = "" name = "edit_id"></p>
                     <div class = "button_area">
                         <p><a class="js-modal-close" href=""></a></p>
                         <p><input type="submit" value = "" class ="btn-success"></p>
                     </div>
-                    <p><input type="hidden" class="text-edit" value = "" name = "edit_id"></p>
                 </div><!--modal__inner-->
                 {{csrf_field()}}
             </form>
