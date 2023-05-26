@@ -7,7 +7,7 @@
 <div class="post_container">
     <div class ="mypost">
         <div class ="search_area">
-        {{Form::textarea('inputkeyword', null, ['class' => 'form-control', 'id' => 'textareaRemarks', 'placeholder' => 'ユーザー名', 'rows' => '3'])}}
+        {{Form::text('inputkeyword', null, ['class' => 'search-form', 'id' => 'textareaRemarks', 'placeholder' => 'ユーザー名', 'rows' => '3'])}}
         </div>
         <div class ="search_btn">
             {{Form::submit('', ['class'=>'btn btn-search btn-block'])}}
@@ -20,7 +20,6 @@
 </div>
 
 
-<h4>ユーザー 一覧</h4>
 @foreach($userLists as $userLists)
 <div class = "userlists">
     <div class="post_other_img">

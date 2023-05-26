@@ -21,7 +21,6 @@
 
 
 <div class = "postlists">
-    <h4>投稿内容一覧</h4>
 
     @foreach($postLists as $postLists)
         @if(Auth::user()->isFollowing($postLists->user->id) || Auth::id() == $postLists->user_id)

@@ -11,6 +11,27 @@ header{
 }
 
 /* main content */
+h1{
+    background-position: center;
+    text-align: center;
+    height: 70px;
+    width: 250px;
+    padding: 30px 10px;
+    border-radius: 5px;
+}
+
+
+#auth_profile{
+    width: 100%;
+    justify-content: flex-end;
+    padding-top: 30px;
+}
+
+.header-box{
+    width: 100%;
+    display: flex;
+}
+
 h4{
     font-size: 30px;
     font-weight: bolder;
@@ -21,6 +42,7 @@ h4{
     flex-flow: row wrap;
     border: solid 2px #000;
 }
+
 #container{
     flex: 0 0 80%;
     text-align: center;
@@ -37,8 +59,11 @@ h4{
 }
 
 .post_container{
-    width: 100%;
+    width: 96%;
+    height:180px;
     border-bottom: 5px solid silver;
+    padding-left: 55px;
+    padding-top: 50px;
 }
 
 .modal{
@@ -107,6 +132,7 @@ h4{
 .post_auth_img{
     width: 85%;
     display: flex;
+    border-radius: 50px;
     padding: 0 100px;
     border-bottom: 3px solid silver;
 }
@@ -204,6 +230,16 @@ h4{
     background-image: url("../images/trash-h.png") ;
 } */
 
+.search-form{
+    border-radius:0.2rem;
+    width: 450px;
+    height: 30px;
+    border:2px solid #606060;
+    padding-top: 35px;
+    font-size: 25px;
+    text-align:start;
+}
+
 .btn-search{
     background: rgb(134, 134, 134);
     display: flex;
@@ -235,8 +271,8 @@ h4{
 
 .search_btn{
     width: 100%;
+    padding-left: 25px;
     display: flex;
-    align-items: flex-end;
 }
 
 .search_area textarea{
@@ -318,12 +354,12 @@ h4{
 } */
 
 .user-name{
-    height: 100px;
-    width: 350px;
+    height: 70px;
+    width: auto;
     font-size: 30px;
     color: rgb(255, 255, 255);
-    position: relative;
-    vertical-align: text-bottom;
+    padding-top: 25px;
+    padding-right: 25px;
 }
 
 .drawer{
@@ -528,7 +564,51 @@ h4{
 }
 
 .username-title{
-    font-size: 20px;
+    width: 100%;
+    height: auto;
+    padding: 30px 10px;
+}
+
+.updateProf-box{
+    height: 100%;
+    width: auto;
+    display:block;
+}
+
+.userUpdate-box{
+    width: 100%;
+    height: auto;
+    padding: 25px 10px;
+}
+
+.mailUpdate-box{
+    width: 100%;
+    height: auto;
+    padding: 25px 10px;
+}
+
+.passUpdate-box{
+    width: 100%;
+    height: auto;
+    padding: 25px 10px;
+}
+
+.passConfUpdate-box{
+    width: 100%;
+    height: auto;
+    padding: 25px 10px;
+}
+
+.bioUpdate-box{
+    width: 100%;
+    height: auto;
+    padding: 26px 10px;
+}
+
+.imgUpdate-box{
+    width: 100%;
+    height: auto;
+    padding: 25px 10px;
 }
 
 .userlists{
@@ -546,22 +626,86 @@ h4{
 }
 
 .post_profile{
-    width: 70%;
-    border-radius: 50px;
+    width: 100%;
     display: flex;
-    padding: 0 100px;
-    flex-direction: column;
+    padding: 0 30px;
+}
+
+.profile_status{
+    width: 25%;
+    height: 100%;
+    font-size: 25px;
 }
 
 .confirmForm{
     display: flex;
-    text-align:center;
-    padding-left: 300px;
-    padding-right: 300px;
+    text-align:left;
+    padding-left: 350px;
+    padding-right: auto;
+    padding-top: 50px;
 }
 
 .form-btn{
     display: flex;
     flex-direction: column;
 
+}
+
+.username-update{
+    border-radius:0.1rem;
+    width: 450px;
+    height: 30px;
+    border: 0.06em  solid #606060;
+    font-size: 25px;
+}
+
+
+.email-update{
+    border-radius:0.1rem;
+    width: 450px;
+    height: 30px;
+    border: 0.06em  solid #606060;
+    font-size: 25px;
+}
+
+.pass-update{
+    border-radius:0.1rem;
+    width: 450px;
+    height: 30px;
+    border: 0.06em  solid #606060;
+    font-size: 25px;
+}
+
+.passConfi-update{
+    border-radius:0.1rem;
+    width: 450px;
+    height: 30px;
+    border: 0.06em  solid #606060;
+    font-size: 25px;
+}
+
+.bio-update{
+    border-radius:0.1rem;
+    width: 450px;
+    height: 30px;
+    border: 0.06em  solid #606060;
+    font-size: 25px;
+}
+
+.updateProf-btn{
+    display: block;
+    border: 1px solid;
+    margin: 0px 10px 0 10px;
+    padding: 0 10px;
+    border-radius: 10px;
+    text-align:center;
+    background: #ff4141;
+    margin: 20px auto;
+    justify-content: flex-end;
+    width: 220px;
+    height: auto;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    color: white;
+    font-size: 20px;
 }

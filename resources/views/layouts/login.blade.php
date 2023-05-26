@@ -22,8 +22,9 @@
 <body>
     <header>
         <div id = "head">
-            <h1><a href="/top"><img src="{{ asset('../images/logo.png') }}"></a></h1>
-                <div id="">
+            <div class ="header-box">
+            <h1><a href="/top"><img src="{{ asset('../images/logo.png') }}" width="160" height="65"></a></h1>
+                <div id="auth_profile">
                     <div id="">
                         <ul class="accordion1">
                             <li class="ac_boxs">
@@ -44,6 +45,7 @@
                         </ul>
                     </div>
                 </div>
+            </div>
         </div>
     </header>
     <div class = "register_area">

@@ -22,16 +22,25 @@
 
 {!! Form::open() !!}
 
-<p>AtlasSNSへようこそ</p>
+<p class = "welcome-title">AtlasSNSへようこそ</p>
 
-{{ Form::label('e-mail') }}
-{{ Form::text('mail',null,['class' => 'input']) }}
-{{ Form::label('password') }}
-{{ Form::password('password',['class' => 'input']) }}
+<div class ="mailLogin-box">
+{{ Form::label('e-mail',null,['class' => 'mail-login']) }}
 
-{{ Form::submit('ログイン') }}
+{{ Form::text('mail',null,['class' => 'mail-loginForm']) }}
+</div>
 
-<p><a href="/register">新規ユーザーの方はこちら</a></p>
+<div class ="passwordLogin-box">
+{{ Form::label('password',null,['class' => 'password-login']) }}
+
+{{ Form::password('password',['class' => 'password-loginForm']) }}
+</div>
+
+<div class="login-box">
+{{ Form::submit('LOGIN',['class'=>'login-btn']) }}
+</div>
+
+<p class="register-url"><a href="/register"><span style="color:white">新規ユーザーの方はこちら</span></a></p>
 
 {!! Form::close() !!}
 

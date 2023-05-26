@@ -18,33 +18,32 @@
 
 <h1>新規ユーザー登録</h1>
 
+
+<p class ="usernamelist-box">
+    {{ Form::label('ユーザー名',null,['class' => 'username-register']) }}
+    {{ Form::text('username',null,['class' => 'userRegi-form']) }}
+</p>
+
+<p class ="maillist-box">
+    {{ Form::label('メールアドレス',null,['class' => 'mail-register']) }}
+    {{ Form::text('mail',null,['class' => 'mailRegi-form']) }}
+</p>
+
+<p class ="passlist-box">
+    {{ Form::label('パスワード',null,['class' => 'pass-register']) }}
+    {{ Form::password('password',['class' => 'passRegi-form']) }}
+</p>
+
+<p class ="passconfList-box">
+    {{ Form::label('パスワード確認',null,['class' => 'passConf-register']) }}
+    {{ Form::password('password_confirmation',['class' => 'passConfRegi-form']) }}
+</p>
+
 <div class = "register-box">
-
-<p>
-{{ Form::label('ユーザー名') }}
-{{ Form::text('username',null,['class' => 'input']) }}
-</p>
-
-<p>
-{{ Form::label('メールアドレス') }}
-{{ Form::text('mail',null,['class' => 'input']) }}
-</p>
-
-<p>
-{{ Form::label('パスワード') }}
-{{ Form::password('password',null,['class' => 'input']) }}
-</p>
-
-<p>
-{{ Form::label('パスワード確認') }}
-{{ Form::password('password_confirmation',null,['class' => 'input']) }}
-</p>
-
-{{ Form::submit('登録') }}
-
+{{ Form::submit('REGISTER',['class'=>'register-btn']) }}
 </div>
 
-<p><a href="/login">ログイン画面へ戻る</a></p>
+<p class="login-url"><a href="/login"><span style="color:white">ログイン画面へ戻る</span></a></p>
 
 {!! Form::close() !!}
 

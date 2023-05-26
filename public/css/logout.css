@@ -6,15 +6,25 @@ html{
 
 body{
     height: 100%;
-    background: #186AC9;
+    background-image: linear-gradient(to top, #fff34d, #208acc 40%,#0c6dff );
 }
 
+h1{
+    text-align: center;
+}
+
+.subtitle{
+    color: white;
+    text-align: center;
+    font-size: large;
+    font-size:300%;
+}
 .register_area{
     height: 100%;
 }
 
 .register_form{
-    width: 30%;
+    width: 25%;
     height: 450px;
     margin: auto;
     background: rgba(0, 0, 0, 0.4);
@@ -24,8 +34,157 @@ body{
     color: white;
 }
 
+.mailLogin-box{
+    padding-top: 30px;
+}
+
+.passwordLogin-box{
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.login-box{
+    padding-left: 40%;
+}
+
+.usernamelist-box{
+    padding-top: 30px;
+}
+
+.maillist-box{
+    padding-top: 30px;
+}
+
+.passlist-box{
+    padding-top: 30px;
+}
+
+.passconfList-box{
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.mail-login{
+    text-align: left;
+    padding-right: 300px;
+}
+
+.password-login{
+    text-align: left;
+    padding-right: 280px;
+}
+
+.username-register{
+    text-align: left;
+    padding-right: 280px;
+}
+
+.mail-register{
+    text-align: left;
+    padding-right: 250px;
+}
+
+.pass-register{
+    text-align: left;
+    padding-right: 280px;
+}
+
+.passConf-register{
+    text-align: left;
+    padding-right: 250px;
+}
+
+.login-btn{
+    display: block;
+    border: 1px solid;
+    margin: 0px 10px 0 10px;
+    padding: 0 10px;
+    border-radius: 5px;
+    text-align:center;
+    background: #ff1919;
+    margin: 20px auto;
+    justify-content: flex-end;
+    width: 150px;
+    height: auto;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    color: white;
+    font-size: 20px;
+}
+
+.register-btn{
+    display: block;
+    border: 1px solid;
+    margin: 0px 10px 0 10px;
+    padding: 0 10px;
+    border-radius: 5px;
+    text-align:center;
+    background: #ff1919;
+    margin: 20px auto;
+    justify-content: flex-end;
+    width: 150px;
+    height: auto;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    color: white;
+    font-size: 20px;
+}
+
+.mail-login::after{
+    content: "\A";
+    white-space: pre;
+}
+
+.password-login::after{
+    content: "\A";
+    white-space: pre;
+}
+
+
+.mail-loginForm{
+    padding: 0.4rem 0.4rem 0.4rem 0.4rem;
+    border-radius:0.5rem;
+    width: 70%;
+    border:2px solid #606060;
+}
+
+.password-loginForm{
+    padding: 0.4rem 0.4rem 0.4rem 0.4rem;
+    border-radius:0.5rem;
+    width: 70%;
+    border:2px solid #606060;
+}
+
+.userRegi-form{
+    padding: 0.4rem 0.4rem 0.4rem 0.4rem;
+    border-radius:0.5rem;
+    width: 70%;
+    border:2px solid #606060;
+}
+
+.mailRegi-form{
+    padding: 0.4rem 0.4rem 0.4rem 0.4rem;
+    border-radius:0.5rem;
+    width: 70%;
+    border:2px solid #606060;
+}
+
+.passRegi-form{
+    padding: 0.4rem 0.4rem 0.4rem 0.4rem;
+    border-radius:0.5rem;
+    width: 70%;
+    border:2px solid #606060;
+}
+
+.passConfRegi-form{
+    padding: 0.4rem 0.4rem 0.4rem 0.4rem;
+    border-radius:0.5rem;
+    width: 70%;
+    border:2px solid #606060;
+}
+
 .register-box{
-    display: inline;
+    padding-left: 40%;
 }
 
 .alert{
@@ -36,4 +195,28 @@ h1{
     font-weight: bold;
     font-size: large;
     color: burlywood;
+}
+
+.welcome-title{
+    color: white;
+    text-align: center;
+    font-size:130%;
+}
+
+.register-url{
+    color: white;
+    text-align: center;
+    font-size:110%;
+}
+
+.login-url{
+    color: white;
+    text-align: center;
+    font-size:110%;
+}
+
+.registered{
+    font-size: 150%;
+    font-weight: bold;
+    padding-bottom: 20px;
 }

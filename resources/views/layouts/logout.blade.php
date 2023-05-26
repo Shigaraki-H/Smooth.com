@@ -22,7 +22,7 @@
 <body>
   <header>
     <h1><img src="../images/logo.png"></h1>
-    <p>Social Network Service</p>
+    <p class ="subtitle">Social Network Service</p>
   </header>
   <div id="container">
     @yield('content')
