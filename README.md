@@ -1,78 +1,77 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+【タイトルと概要】
+Webサイトの名前：Smooth.com(スムースドットコム)　～すぐにラクにコミュニケーションが取れるサイト～
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
 
-## About Laravel
+===================================================================================
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+【ロゴデザイン】
+※コンセプトは掲示板Webサイトのコミュニティと交流をイメージしています。円形のマークは既存の掲示板のカラーをインスパイアした水色と青色の二色で、人々が集まり交流する様子を表現しています。
+円の中にはアルファベットのイニシャル「S」を配置し、個性的なデザインに仕上げています。※
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+SNS掲示板を想定した会員制のサービスです。
+一度投稿したつぶやきを編集したり、削除したりすることができます。
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+![SNSログイン画面](https://github.com/Shigaraki-H/Smooth.com/assets/84112511/a12ec3df-a0a9-4bd1-a7b8-67ec9b677a5b)
 
-## Learning Laravel
+![SNSホーム画面](https://github.com/Shigaraki-H/Sommoth.com/assets/84112511/de3758a2-f2c5-4fe9-aeb5-f7c72632a5be)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+====================================================================================
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+【使用記述】
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
+・PHP 7.4.33
 
-## Contributing
+・HTML5
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+・CSS
 
-## Code of Conduct
+・Laravel Framework 6.20.44
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+・javascript(JQuery・ajax)
 
-## Security Vulnerabilities
+・mysql　 Ver 15.1
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+・Docker・Docker-compose
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+=======================================================================
+
+【機能一覧】
+・ログイン機能
+・ユーザー登録
+・登録ユーザーの表示
+・投稿機能
+・投稿一覧表示機能
+・投稿削除機能
+・投稿編集機能
+
+・プロフィール編集機能
+・ユーザー表示機能
+・ユーザー一覧表示機能
+
+・検索ワード表示機能
+・検索語ユーザー一覧表示機能
+
+・フォローリスト／フォロワーリストの一覧表示機能
+・フォローリスト／フォロワーリストのアイコン一覧表示機能
+
+・他ユーザーのプロフィール表示機能
+・他ユーザーの投稿表示一覧機能
+
+
+========================================================================
+
+
+【システム構成図】
+
+![テーブル定義](https://github.com/Shigaraki-H/Smooth.com/assets/84112511/a6ee29b7-2d9e-4b03-8cab-c9bb85192406)
+![ER図](https://github.com/Shigaraki-H/Smooth.com/assets/84112511/d8392ae3-dd35-49be-bffe-dbf896e3ecd3)
+
+
+========================================================================================
+
+
+【今後追加したい機能など】
+・操作に関するＱ＆Ａチャットボット機能
