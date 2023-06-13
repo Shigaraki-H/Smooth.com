@@ -22,7 +22,7 @@
 <body>
   <header>
     <h1><img src="../images/logo.png"></h1>
-    <p class ="subtitle">Social Network Service</p>
+    <p class ="subtitle">～すぐにラクにコミュニケーションが取れるサイト～</p>
   </header>
   <div id="container">
     @yield('content')

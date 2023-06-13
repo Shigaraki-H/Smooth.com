@@ -22,7 +22,7 @@
 
 {!! Form::open() !!}
 
-<p class = "welcome-title">AtlasSNSへようこそ</p>
+<p class = "welcome-title">Smooth.comへようこそ</p>
 
 <div class ="mailLogin-box">
 {{ Form::label('e-mail',null,['class' => 'mail-login']) }}
