@@ -21,7 +21,7 @@
 </head>
 <body>
   <header>
-    <h1><img src="../images/logo.png"></h1>
+    <h1><img src="../public/images/logo.png"></h1>
     <p class ="subtitle">～すぐにラクにコミュニケーションが取れるサイト～</p>
   </header>
   <div id="container">

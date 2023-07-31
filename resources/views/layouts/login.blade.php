@@ -23,7 +23,7 @@
     <header>
         <div id = "head">
             <div class ="header-box">
-            <h1><a href="/top"><img src="{{ asset('../images/logo.png') }}" width="160" height="65"></a></h1>
+            <h1><a href="/top"><img src="{{ asset('../public/images/logo.png') }}" width="160" height="65"></a></h1>
                 <div id="auth_profile">
                     <div id="">
                         <ul class="accordion1">
@@ -39,7 +39,7 @@
 
                                             </div>
                                         </p>
-                                            <div><img src="{{ asset('../storage/images/'.Auth::user()->images) }}" width="90px" height="90px"></div>
+                                            <div><img src="{{ asset('../public/storage/images/'.Auth::user()->images) }}" width="90px" height="90px"></div>
                                     </div>
                             </li>
                         </ul>
