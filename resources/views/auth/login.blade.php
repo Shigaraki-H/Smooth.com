@@ -40,7 +40,7 @@
 {{ Form::submit('LOGIN',['class'=>'login-btn']) }}
 </div>
 
-<p class="register-url"><a href="/public/login"><span style="color:white">新規ユーザーの方はこちら</span></a></p>
+<p class="register-url"><a href="/public/register"><span style="color:white">新規ユーザーの方はこちら</span></a></p>
 
 {!! Form::close() !!}
 
