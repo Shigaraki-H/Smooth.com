@@ -73,7 +73,7 @@ class RegisterController extends Controller
 
 
     public function registerForm(){
-        return view("public.auth.register");
+        return view("auth.register");
     }
 
     public function register(ValidationCheckRegister $request){
