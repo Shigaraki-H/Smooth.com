@@ -73,7 +73,7 @@ class RegisterController extends Controller
 
 
     public function registerForm(){
-        return view("auth.register");
+        return view("public.auth.register");
     }
 
     public function register(ValidationCheckRegister $request){
@@ -85,7 +85,7 @@ class RegisterController extends Controller
             $this->create($data);
             return view('auth.added',['username' => $username]);
         }
-        return view('auth.register');
+        return view('public.auth.register');
     }
 
     public function added(){
