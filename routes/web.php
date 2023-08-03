@@ -27,18 +27,18 @@ Route::post('/login', 'Auth\LoginController@login');
 Route::get('/logout', 'Auth\LoginController@logout');
 Route::post('/logout', 'Auth\LoginController@logout');
 
-Route::get('/public/register', 'Auth\RegisterController@registerForm');
-Route::post('/public/register/post', 'Auth\RegisterController@register');
+Route::get('/register', 'Auth\RegisterController@registerForm');
+Route::post('/register/post', 'Auth\RegisterController@register');
 
-Route::get('/public/added', 'Auth\RegisterController@added');
-Route::post('/public/added', 'Auth\RegisterController@added');
+Route::get('/added', 'Auth\RegisterController@added');
+Route::post('/added', 'Auth\RegisterController@added');
 
 
 
 
 Route::group(['middleware' => 'auth'], function(){
 //ログイン中のページ
-Route::get('/public/top','PostsController@index');
+Route::get('/top','PostsController@index');
 
 Route::post('/top','PostsController@post')->name('top');
 

@@ -23,7 +23,7 @@
     <header>
         <div id = "head">
             <div class ="header-box">
-            <h1><a href="/top"><img src="{{ asset('../public/images/logo.png') }}" width="160" height="65"></a></h1>
+            <h1><a href="/public/top"><img src="{{ asset('../public/images/logo.png') }}" width="160" height="65"></a></h1>
                 <div id="auth_profile">
                     <div id="">
                         <ul class="accordion1">
