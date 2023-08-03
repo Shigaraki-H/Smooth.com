@@ -68,9 +68,9 @@
                         <div id="confirm">
                                 <div class="inner-bar">
                                     <ul class="drawer-list">
-                                        <li><a href="/top">ホーム</a></li>
-                                        <li><a href="/profile">プロフィール</a></li>
-                                        <li><a href="/logout">ログアウト</a></li>
+                                        <li><a href="/public/top">ホーム</a></li>
+                                        <li><a href="/public/profile">プロフィール</a></li>
+                                        <li><a href="/public/logout">ログアウト</a></li>
                                     </ul>
                                 </div>
 
@@ -79,14 +79,14 @@
                                     <p>フォロー数</p>
                                     <p><span>{{ Auth::user()->Follows()->get()->count() }}名</span></p>
                                 </div>
-                                <p class="btn-blue"><a href="/followList">フォローリスト</a></p>
+                                <p class="btn-blue"><a href="/public/followList">フォローリスト</a></p>
                                 <div>
                                     <p>フォロワー数</p>
                                     <p><span>{{ Auth::user()->Followers()->get()->count() }}名</span></p>
                                 </div>
-                                <p class="btn-blue"><a href="/followerList">フォロワーリスト</a></p>
+                                <p class="btn-blue"><a href="/public/followerList">フォロワーリスト</a></p>
                         </div>
-                            <p class="btn-blue"><a href="/search">ユーザー検索</a></p>
+                            <p class="btn-blue"><a href="/public/search">ユーザー検索</a></p>
                 </div>
         </div>
     </div>

@@ -27,18 +27,18 @@ Route::post('/login', 'Auth\LoginController@login');
 Route::get('/logout', 'Auth\LoginController@logout');
 Route::post('/logout', 'Auth\LoginController@logout');
 
-Route::get('/Smooth.com/public/register', 'Auth\RegisterController@registerForm');
-Route::post('/Smooth.com/register/post', 'Auth\RegisterController@register');
+Route::get('/public/register', 'Auth\RegisterController@registerForm');
+Route::post('/public/register/post', 'Auth\RegisterController@register');
 
-Route::get('/added', 'Auth\RegisterController@added');
-Route::post('/added', 'Auth\RegisterController@added');
+Route::get('/public/added', 'Auth\RegisterController@added');
+Route::post('/public/added', 'Auth\RegisterController@added');
 
 
 
 
 Route::group(['middleware' => 'auth'], function(){
 //ログイン中のページ
-Route::get('/top','PostsController@index');
+Route::get('/public/top','PostsController@index');
 
 Route::post('/top','PostsController@post')->name('top');
 
