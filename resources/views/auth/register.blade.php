@@ -14,7 +14,7 @@
     </div>
 @endif
 
-{!! Form::open(['url' => '/public/register/post', 'files' => true]) !!}
+{!! Form::open(['url' => '/register/post', 'files' => true]) !!}
 
 <h1>新規ユーザー登録</h1>
 
