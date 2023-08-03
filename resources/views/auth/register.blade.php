@@ -14,7 +14,7 @@
     </div>
 @endif
 
-{!! Form::open(['url' => '/register/post', 'files' => true]) !!}
+{!! Form::open(['url' => '/public/register/post', 'files' => true]) !!}
 
 <h1>新規ユーザー登録</h1>
 
@@ -43,7 +43,7 @@
 {{ Form::submit('REGISTER',['class'=>'register-btn']) }}
 </div>
 
-<p class="login-url"><a href="/login"><span style="color:white">ログイン画面へ戻る</span></a></p>
+<p class="login-url"><a href="/public/login"><span style="color:white">ログイン画面へ戻る</span></a></p>
 
 {!! Form::close() !!}
 

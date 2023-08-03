@@ -85,7 +85,7 @@ class RegisterController extends Controller
             $this->create($data);
             return view('auth.added',['username' => $username]);
         }
-        return view('public.auth.register');
+        return view('auth.register');
     }
 
     public function added(){
