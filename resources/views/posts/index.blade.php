@@ -45,7 +45,7 @@
         <div class="modal js-modal">
             <div class="modal__bg js-modal-close"></div>
                 <div class="modal__content">
-                    <form action="/post/edit/{{$postLists->id}}" method="post" >
+                    <form action="/public/post/edit/{{$postLists->id}}" method="post" >
                     <div class = "edit-container">
                         <textarea name="postcomment" class="modal_post"></textarea>
                     </div>
