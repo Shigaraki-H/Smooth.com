@@ -6,7 +6,7 @@
 <div class="post_container">
     <div class ="mypost">
         <div class="post_images">
-            <a><img src="{{ asset('../storage/images/'.Auth::user()->images) }}" width="90px" height="90px"></a>
+            <a><img src="{{ asset('storage/images/'.Auth::user()->images) }}" width="90px" height="90px"></a>
             {{Form::open(['url' => '/top', 'files' => true])}}
             <div class="post_input">
                 {{Form::textarea('postcomment', null, ['class' => 'form-control', 'id' => 'textareaRemarks', 'placeholder' => '投稿内容を登録してください', 'rows' => '3'])}}
@@ -26,7 +26,7 @@
         @if(Auth::user()->isFollowing($postLists->user->id) || Auth::id() == $postLists->user_id)
         <p class ="created_block">{{$postLists->created_at}}</p>
         <div class = "image_block">
-            <a><img src="{{ asset('../storage/images/'.$postLists->user->images) }}" width="90px" height="90px"></a>
+            <a><img src="{{ asset('storage/images/'.$postLists->user->images) }}" width="90px" height="90px"></a>
             <div class ="name_status">
                 <p class ="user_block">{{$postLists->user->username}}</p>
                 <p class ="post_block">{{$postLists->post}}</p>
